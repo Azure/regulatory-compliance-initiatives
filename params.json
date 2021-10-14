@@ -1,0 +1,2924 @@
+{
+    "evaluatedSkuNames-ef619a2c-cc4d-4d03-b2ba-8c94a834d85b": {
+        "type": "Array",
+        "defaultValue": [
+            "Developer",
+            "Premium"
+        ],
+        "allowedValues": [
+            "Developer",
+            "Basic",
+            "Standard",
+            "Premium",
+            "Consumption"
+        ],
+        "metadata": {
+            "displayName": "API Management SKU Names",
+            "description": "List of API Management SKUs against which this policy will be evaluated."
+        }
+    },
+    "effect-3d9f5e4c-9947-4579-9539-2a7695fbc187": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:App Configuration should disable public network access",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-73290fa2-dfa7-4bbb-945d-a5e23b75df2c": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "Modify",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Configure App Configuration to disable public network access",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-967a4b4b-2da9-43c1-b7d0-f98d0d74d0b1": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:App Configuration should use a customer-managed key",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "PHPLatestVersion": {
+        "type": "String",
+        "defaultValue": "7.3",
+        "metadata": {
+            "displayName": "Latest PHP version for App Services",
+            "description": "Latest supported PHP version for App Services"
+        }
+    },
+    "JavaLatestVersion": {
+        "type": "String",
+        "defaultValue": "11",
+        "metadata": {
+            "displayName": "Latest Java version for App Services",
+            "description": "Latest supported Java version for App Services"
+        }
+    },
+    "LinuxPythonLatestVersion": {
+        "type": "String",
+        "defaultValue": "3.8",
+        "metadata": {
+            "displayName": "Latest Python version for Linux for App Services",
+            "description": "Latest supported Python version for App Services"
+        }
+    },
+    "requiredRetentionDays": {
+        "type": "String",
+        "defaultValue": "365",
+        "metadata": {
+            "displayName": "Required retention period (days) for resource logs"
+        }
+    },
+    "vaultLocation-09ce66bc-1220-4153-8104-e3f51c936913": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Location (Specify the location of the VMs that you want to protect)",
+            "description": "Specify the location of the VMs that you want to protect. VMs should be backed up to a vault in the same location. For example - southeastasia.",
+            "strongType": "location"
+        }
+    },
+    "backupPolicyId-09ce66bc-1220-4153-8104-e3f51c936913": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Backup Policy (of type Azure VM from a vault in the location chosen above)",
+            "description": "Specify the id of the Azure backup policy to configure backup of the virtual machines. The selected Azure backup policy should be of type Azure virtual machine. This policy needs to be in a vault that is present in the location chosen above. For example - /subscriptions/<SubscriptionId>/resourceGroups/<resourceGroupName>/providers/Microsoft.RecoveryServices/vaults/<VaultName>/backupPolicies/<BackupPolicyName>.",
+            "strongType": "Microsoft.RecoveryServices/vaults/backupPolicies"
+        }
+    },
+    "exclusionTagName-09ce66bc-1220-4153-8104-e3f51c936913": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Exclusion Tag Name",
+            "description": "Name of the tag to use for excluding VMs from the scope of this policy. This should be used along with the Exclusion Tag Value parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy."
+        }
+    },
+    "exclusionTagValue-09ce66bc-1220-4153-8104-e3f51c936913": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Exclusion Tag Values",
+            "description": "Value of the tag to use for excluding VMs from the scope of this policy (in case of multiple values, use a comma-separated list). This should be used along with the Exclusion Tag Name parameter. Learn more at https://aka.ms/AppCentricVMBackupPolicy."
+        }
+    },
+    "effect-09ce66bc-1220-4153-8104-e3f51c936913": {
+        "type": "String",
+        "defaultValue": "auditIfNotExists",
+        "allowedValues": [
+            "deployIfNotExists",
+            "auditIfNotExists",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Configure backup on virtual machines without a given tag to an existing recovery services vault in the same location",
+            "description": "Enable or disable the execution of the policy."
+        }
+    },
+    "profileName-c717fb0c-d118-4c43-ab3d-ece30ac81fb3": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-c717fb0c-d118-4c43-ab3d-ece30ac81fb3": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "tagName-c717fb0c-d118-4c43-ab3d-ece30ac81fb3": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Exclusion Tag Name",
+            "description": "Name of the tag to use for excluding vaults from this policy. This should be used along with the Exclusion Tag Value parameter."
+        }
+    },
+    "tagValue-c717fb0c-d118-4c43-ab3d-ece30ac81fb3": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Exclusion Tag Value",
+            "description": "Value of the tag to use for excluding vaults from this policy. This should be used along with the Exclusion Tag Name parameter."
+        }
+    },
+    "effect-8426280e-b5be-43d9-979e-653d12a08638": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "Modify",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Configure managed disks to disable public network access",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "location-8426280e-b5be-43d9-979e-653d12a08638": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Location",
+            "description": "All disks in this region are validated and disk access resource would be associated with them.",
+            "strongType": "location"
+        }
+    },
+    "diskAccessId-8426280e-b5be-43d9-979e-653d12a08638": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Resource Id for the DiskAccess in the given location to which the disk resource needs to be linked",
+            "description": "Disk access resources enable exporting managed disks securely via private endpoints. Learn more at: https://aka.ms/disksprivatelinksdoc",
+            "strongType": "Microsoft.Compute/diskAccesses"
+        }
+    },
+    "effect-1d84d5fb-01f6-4d12-ba4f-4a26081d403d": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Virtual machines should be migrated to new Azure Resource Manager resources",
+            "description": "The effect determines what happens when the policy rule is evaluated to match"
+        }
+    },
+    "effect-702dd420-7fcc-42c5-afe8-4026edd20fe0": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:OS and data disks should be encrypted with a customer-managed key",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "includeAKSClusters-7c1b1214-f927-48bf-8882-84f0af6588b1": {
+        "type": "Boolean",
+        "defaultValue": false,
+        "metadata": {
+            "displayName": "Include AKS Clusters",
+            "description": "Whether to include AKS Clusters to resource logs extension - True or False"
+        }
+    },
+    "effect-c0e996f8-39cf-4af9-9f45-83fbde810432": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Only approved VM extensions should be installed",
+            "description": "The effect determines what happens when the policy rule is evaluated to match"
+        }
+    },
+    "approvedExtensions-c0e996f8-39cf-4af9-9f45-83fbde810432": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Approved extensions",
+            "description": "The list of approved extension types that can be installed. Example: AzureDiskEncryption"
+        }
+    },
+    "allowedEncryptionSets-d461a302-a187-421a-89ac-84acdb4edc04": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Allowed disk encryption set",
+            "description": "The list of allowed disk encryption sets for managed disks.",
+            "strongType": "Microsoft.Compute/diskEncryptionSets"
+        }
+    },
+    "effect-d461a302-a187-421a-89ac-84acdb4edc04": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Managed disks should use a specific set of disk encryption sets for the customer-managed key encryption",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-fc4d8e41-e223-45ea-9bf5-eada37891d87": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Virtual machines and virtual machine scale sets should have encryption at host enabled",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-0aa61e00-0a01-4a3c-9945-e93cffedf0e6": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Disabled",
+            "Deny"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Azure Container Instance container group should use customer-managed key for encryption",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-8af8f826-edcb-4178-b35f-851ea6fea615": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Disabled",
+            "Deny"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Azure Container Instance container group should deploy into a virtual network",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-0fdf0491-d080-4575-b627-ad0e843cba0f": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Public network access should be disabled for Container registries",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-5b9159ae-1701-4a6f-9a7a-aa9c8ddd0580": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Container registries should be encrypted with a customer-managed key",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-a3701552-92ea-433e-9d17-33b7f1208fc9": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "Modify",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Configure Container registries to disable public network access",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-d0793b48-0edc-4296-a390-4c75d1bdfd71": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Container registries should not allow unrestricted network access",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "listOfResourceTypesNotAllowed-6c112d4e-5bc7-47ae-a041-ea2d9dccd749": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Not allowed resource types",
+            "description": "The list of resource types that cannot be deployed.",
+            "strongType": "resourceTypes"
+        }
+    },
+    "effect-6c112d4e-5bc7-47ae-a041-ea2d9dccd749": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Not allowed resource types",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "listOfResourceTypesAllowed-a08ec900-254a-4555-9bf5-e42af04b5c5c": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Allowed resource types",
+            "description": "The list of resource types that can be deployed.",
+            "strongType": "resourceTypes"
+        }
+    },
+    "listOfAllowedLocations-e56962a6-4747-49cd-b67b-bf8b01975c4c": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Allowed locations",
+            "description": "The list of locations that can be specified when deploying resources.",
+            "strongType": "location"
+        }
+    },
+    "listOfAllowedLocations-e765b5de-1225-4ba3-bd56-1ac6695af988": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Allowed locations",
+            "description": "The list of locations that resource groups can be created in.",
+            "strongType": "location"
+        }
+    },
+    "effect-0b60c0b2-2dc2-4e1c-b5c9-abbed971de53": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Key vaults should have purge protection enabled",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-1e66c121-a66a-4b1f-9b83-0fd99bf0fc2d": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Key vaults should have soft delete enabled",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-c39ba22d-4428-4149-b981-70acb31fc383": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Azure Key Vault Managed HSM should have purge protection enabled",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-7d7be79c-23ba-4033-84dd-45e2a5ccdd67": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Both operating systems and data disks in Azure Kubernetes Service clusters should be encrypted by customer-managed keys",
+            "description": "'Audit' allows a non-compliant resource to be created or updated, but flags it as non-compliant. 'Deny' blocks the non-compliant resource creation or update. 'Disabled' turns off the policy."
+        }
+    },
+    "effect-1a5b4dca-0b6f-4cf5-907c-56316bc1bf3d": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes clusters should be accessible only over HTTPS",
+            "description": "'Audit' allows a non-compliant resource to be created, but flags it as non-compliant. 'Deny' blocks the resource creation. 'Disable' turns off the policy."
+        }
+    },
+    "excludedNamespaces-1a5b4dca-0b6f-4cf5-907c-56316bc1bf3d": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation."
+        }
+    },
+    "namespaces-1a5b4dca-0b6f-4cf5-907c-56316bc1bf3d": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-1a5b4dca-0b6f-4cf5-907c-56316bc1bf3d": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "effect-1c6e92c9-99f0-4e55-9cf2-0c234dc48f99": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes clusters should not allow container privilege escalation",
+            "description": "'Audit' allows a non-compliant resource to be created or updated, but flags it as non-compliant. 'Deny' blocks the non-compliant resource creation or update. 'Disabled' turns off the policy."
+        }
+    },
+    "excludedNamespaces-1c6e92c9-99f0-4e55-9cf2-0c234dc48f99": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation."
+        }
+    },
+    "namespaces-1c6e92c9-99f0-4e55-9cf2-0c234dc48f99": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-1c6e92c9-99f0-4e55-9cf2-0c234dc48f99": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "effect-233a2a17-77ca-4fb1-9b6b-69223d272a44": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes cluster services should listen only on allowed ports",
+            "description": "'Audit' allows a non-compliant resource to be created, but flags it as non-compliant. 'Deny' blocks the resource creation. 'Disable' turns off the policy."
+        }
+    },
+    "excludedNamespaces-233a2a17-77ca-4fb1-9b6b-69223d272a44": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation."
+        }
+    },
+    "namespaces-233a2a17-77ca-4fb1-9b6b-69223d272a44": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-233a2a17-77ca-4fb1-9b6b-69223d272a44": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "allowedServicePortsList-233a2a17-77ca-4fb1-9b6b-69223d272a44": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Allowed service ports list",
+            "description": "The list of service ports allowed in a Kubernetes cluster. Array only accepts strings. Example: [443\""
+        }
+    },
+    "effect-440b515e-a580-421e-abeb-b159a61ddcbc": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes cluster containers should only listen on allowed ports",
+            "description": "'Audit' allows a non-compliant resource to be created, but flags it as non-compliant. 'Deny' blocks the resource creation. 'Disable' turns off the policy."
+        }
+    },
+    "excludedNamespaces-440b515e-a580-421e-abeb-b159a61ddcbc": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation."
+        }
+    },
+    "namespaces-440b515e-a580-421e-abeb-b159a61ddcbc": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-440b515e-a580-421e-abeb-b159a61ddcbc": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "allowedContainerPortsList-440b515e-a580-421e-abeb-b159a61ddcbc": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Allowed container ports list",
+            "description": "The list of container ports allowed in a Kubernetes cluster. Array only accepts strings. Example: [443\""
+        }
+    },
+    "effect-82985f06-dc18-4a48-bc1c-b9f4f0098cfe": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes cluster pods should only use approved host network and port range",
+            "description": "'Audit' allows a non-compliant resource to be created or updated, but flags it as non-compliant. 'Deny' blocks the non-compliant resource creation or update. 'Disabled' turns off the policy."
+        }
+    },
+    "excludedNamespaces-82985f06-dc18-4a48-bc1c-b9f4f0098cfe": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation."
+        }
+    },
+    "namespaces-82985f06-dc18-4a48-bc1c-b9f4f0098cfe": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-82985f06-dc18-4a48-bc1c-b9f4f0098cfe": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "allowHostNetwork-82985f06-dc18-4a48-bc1c-b9f4f0098cfe": {
+        "type": "Boolean",
+        "defaultValue": false,
+        "metadata": {
+            "displayName": "Allow host network usage",
+            "description": "Set this value to true if pod is allowed to use host network otherwise false."
+        }
+    },
+    "minPort-82985f06-dc18-4a48-bc1c-b9f4f0098cfe": {
+        "type": "Integer",
+        "defaultValue": 0,
+        "metadata": {
+            "displayName": "Min host port",
+            "description": "The minimum value in the allowable host port range that pods can use in the host network namespace."
+        }
+    },
+    "maxPort-82985f06-dc18-4a48-bc1c-b9f4f0098cfe": {
+        "type": "Integer",
+        "defaultValue": 0,
+        "metadata": {
+            "displayName": "Max host port",
+            "description": "The maximum value in the allowable host port range that pods can use in the host network namespace."
+        }
+    },
+    "effect-95edb821-ddaf-4404-9732-666045e056b4": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes cluster should not allow privileged containers",
+            "description": "'Audit' allows a non-compliant resource to be created, but flags it as non-compliant. 'Deny' blocks the resource creation. 'Disable' turns off the policy."
+        }
+    },
+    "excludedNamespaces-95edb821-ddaf-4404-9732-666045e056b4": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation."
+        }
+    },
+    "namespaces-95edb821-ddaf-4404-9732-666045e056b4": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-95edb821-ddaf-4404-9732-666045e056b4": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "excludedContainers-95edb821-ddaf-4404-9732-666045e056b4": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Containers exclusions",
+            "description": "The list of InitContainers and Containers to exclude from policy evaluation. The identify is the name of container. Use an empty list to apply this policy to all containers in all namespaces."
+        }
+    },
+    "effect-c26596ff-4d70-4e6a-9a30-c2506bd2f80c": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes cluster containers should only use allowed capabilities",
+            "description": "'Audit' allows a non-compliant resource to be created or updated, but flags it as non-compliant. 'Deny' blocks the non-compliant resource creation or update. 'Disabled' turns off the policy."
+        }
+    },
+    "excludedNamespaces-c26596ff-4d70-4e6a-9a30-c2506bd2f80c": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation."
+        }
+    },
+    "namespaces-c26596ff-4d70-4e6a-9a30-c2506bd2f80c": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-c26596ff-4d70-4e6a-9a30-c2506bd2f80c": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "allowedCapabilities-c26596ff-4d70-4e6a-9a30-c2506bd2f80c": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Allowed capabilities",
+            "description": "The list of capabilities that are allowed to be added to a container. Provide empty list as input to block everything."
+        }
+    },
+    "requiredDropCapabilities-c26596ff-4d70-4e6a-9a30-c2506bd2f80c": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Required drop capabilities",
+            "description": "The list of capabilities that must be dropped by a container."
+        }
+    },
+    "effect-d46c275d-1680-448d-b2ec-e495a3b6cc89": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes cluster services should only use allowed external IPs",
+            "description": "'Audit' allows a non-compliant resource to be created or updated, but flags it as non-compliant. 'Deny' blocks the non-compliant resource creation or update. 'Disabled' turns off the policy."
+        }
+    },
+    "excludedNamespaces-d46c275d-1680-448d-b2ec-e495a3b6cc89": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation. Providing a value for this parameter is optional."
+        }
+    },
+    "namespaces-d46c275d-1680-448d-b2ec-e495a3b6cc89": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-d46c275d-1680-448d-b2ec-e495a3b6cc89": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "allowedExternalIPs-d46c275d-1680-448d-b2ec-e495a3b6cc89": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Allowed External IPs",
+            "description": "List of External IPs that services are allowed to use. Empty array means all external IPs are disallowed."
+        }
+    },
+    "effect-df49d893-a74c-421d-bc95-c663042e5b80": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes cluster containers should run with a read only root file system",
+            "description": "'Audit' allows a non-compliant resource to be created or updated, but flags it as non-compliant. 'Deny' blocks the non-compliant resource creation or update. 'Disabled' turns off the policy."
+        }
+    },
+    "excludedNamespaces-df49d893-a74c-421d-bc95-c663042e5b80": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation."
+        }
+    },
+    "namespaces-df49d893-a74c-421d-bc95-c663042e5b80": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-df49d893-a74c-421d-bc95-c663042e5b80": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "effect-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Kubernetes cluster pods and containers should only run with approved user and group IDs",
+            "description": "'Audit' allows a non-compliant resource to be created or updated, but flags it as non-compliant. 'Deny' blocks the non-compliant resource creation or update. 'Disabled' turns off the policy."
+        }
+    },
+    "excludedNamespaces-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace exclusions",
+            "description": "List of Kubernetes namespaces to exclude from policy evaluation."
+        }
+    },
+    "namespaces-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Namespace inclusions",
+            "description": "List of Kubernetes namespaces to only include in policy evaluation. An empty list means the policy is applied to all resources in all namespaces."
+        }
+    },
+    "labelSelector-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "Object",
+        "defaultValue": {},
+        "metadata": {
+            "displayName": "Kubernetes label selector",
+            "description": "Label query to select Kubernetes resources for policy evaluation. An empty label selector matches all Kubernetes resources."
+        }
+    },
+    "runAsUserRule-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "String",
+        "defaultValue": "RunAsAny",
+        "allowedValues": [
+            "MustRunAs",
+            "MustRunAsNonRoot",
+            "RunAsAny"
+        ],
+        "metadata": {
+            "displayName": "Run as user rule",
+            "description": "The 'RunAsUser' rule that containers are allowed to run with."
+        }
+    },
+    "runAsUserRanges-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "Object",
+        "defaultValue": {
+            "ranges": []
+        },
+        "metadata": {
+            "displayName": "Allowed user ID ranges",
+            "description": "The user ID ranges that are allowed for containers to use."
+        }
+    },
+    "runAsGroupRule-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "String",
+        "defaultValue": "RunAsAny",
+        "allowedValues": [
+            "MustRunAs",
+            "MayRunAs",
+            "RunAsAny"
+        ],
+        "metadata": {
+            "displayName": "Run as group rule",
+            "description": "The 'RunAsGroup' rule that containers are allowed to run with."
+        }
+    },
+    "runAsGroupRanges-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "Object",
+        "defaultValue": {
+            "ranges": []
+        },
+        "metadata": {
+            "displayName": "Allowed group ID ranges",
+            "description": "The group ID ranges that are allowed for containers to use."
+        }
+    },
+    "supplementalGroupsRule-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "String",
+        "defaultValue": "RunAsAny",
+        "allowedValues": [
+            "MustRunAs",
+            "MayRunAs",
+            "RunAsAny"
+        ],
+        "metadata": {
+            "displayName": "Supplemental group rule",
+            "description": "The 'SupplementalGroups' rule that containers are allowed to run with."
+        }
+    },
+    "supplementalGroupsRanges-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "Object",
+        "defaultValue": {
+            "ranges": []
+        },
+        "metadata": {
+            "displayName": "Allowed supplemental group ID ranges",
+            "description": "The supplemental group ID ranges that are allowed for containers to use."
+        }
+    },
+    "fsGroupRule-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "String",
+        "defaultValue": "RunAsAny",
+        "allowedValues": [
+            "MustRunAs",
+            "MayRunAs",
+            "RunAsAny"
+        ],
+        "metadata": {
+            "displayName": "File system group rule",
+            "description": "The 'FSGroup' rule that containers are allowed to run with."
+        }
+    },
+    "fsGroupRanges-f06ddb64-5fa3-4b77-b166-acb36f7f6042": {
+        "type": "Object",
+        "defaultValue": {
+            "ranges": []
+        },
+        "metadata": {
+            "displayName": "Allowed file system group ID ranges",
+            "description": "The file system group ranges that are allowed for pods to use."
+        }
+    },
+    "effect-04d53d87-841c-4f23-8a5b-21564380b55e": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Service Bus to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-04d53d87-841c-4f23-8a5b-21564380b55e": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-04d53d87-841c-4f23-8a5b-21564380b55e": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "metricsEnabled-04d53d87-841c-4f23-8a5b-21564380b55e": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logsEnabled-04d53d87-841c-4f23-8a5b-21564380b55e": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logAnalytics-053d3325-282c-4e5c-b944-24faffd30d77": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "listOfImageIdToInclude-053d3325-282c-4e5c-b944-24faffd30d77": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Optional: List of VM images that have supported Linux OS to add to scope",
+            "description": "Example value: '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage'"
+        }
+    },
+    "logAnalytics-0868462e-646c-4fe3-9ced-a733534b6a2c": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Log Analytics workspace is used to receive performance data. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "listOfImageIdToInclude-0868462e-646c-4fe3-9ced-a733534b6a2c": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Optional: List of virtual machine images that have supported Windows OS to add to scope",
+            "description": "Example values: '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage'"
+        }
+    },
+    "effect-0868462e-646c-4fe3-9ced-a733534b6a2c": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy - Configure Log Analytics agent to be enabled on Windows virtual machines",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-08ba64b8-738f-4918-9686-730d2ed79c7d": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Search Services to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-08ba64b8-738f-4918-9686-730d2ed79c7d": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-08ba64b8-738f-4918-9686-730d2ed79c7d": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "metricsEnabled-08ba64b8-738f-4918-9686-730d2ed79c7d": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logsEnabled-08ba64b8-738f-4918-9686-730d2ed79c7d": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "effect-1f68a601-6e6d-4e42-babf-3f643a047ea2": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Azure Monitor Logs clusters should be encrypted with customer-managed key",
+            "description": "The effect determines what happens when the policy rule is evaluated to match"
+        }
+    },
+    "effect-1f6e93e8-6b31-41b1-83f6-36e449a42579": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Event Hub to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-1f6e93e8-6b31-41b1-83f6-36e449a42579": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-1f6e93e8-6b31-41b1-83f6-36e449a42579": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "metricsEnabled-1f6e93e8-6b31-41b1-83f6-36e449a42579": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logsEnabled-1f6e93e8-6b31-41b1-83f6-36e449a42579": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "effect-237e0f7e-b0e8-4ec4-ad46-8c12cb66d673": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Stream Analytics to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-237e0f7e-b0e8-4ec4-ad46-8c12cb66d673": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-237e0f7e-b0e8-4ec4-ad46-8c12cb66d673": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "metricsEnabled-237e0f7e-b0e8-4ec4-ad46-8c12cb66d673": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logsEnabled-237e0f7e-b0e8-4ec4-ad46-8c12cb66d673": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "effect-25763a0a-5783-4f14-969e-79d4933eb74b": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Data Lake Storage Gen1 to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-25763a0a-5783-4f14-969e-79d4933eb74b": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-25763a0a-5783-4f14-969e-79d4933eb74b": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "metricsEnabled-25763a0a-5783-4f14-969e-79d4933eb74b": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logsEnabled-25763a0a-5783-4f14-969e-79d4933eb74b": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logAnalytics-3c1b3629-c8f8-4bf6-862c-037cb9094038": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Log Analytics workspace is used to receive performance data. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "listOfImageIdToInclude-3c1b3629-c8f8-4bf6-862c-037cb9094038": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Optional: List of virtual machine images that have supported Windows OS to add to scope",
+            "description": "Example value: '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage'"
+        }
+    },
+    "effect-3c1b3629-c8f8-4bf6-862c-037cb9094038": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy - Configure Log Analytics agent to be enabled on Windows virtual machine scale sets",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-3d5da587-71bd-41f5-ac95-dd3330c2d58d": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Search Services to Event Hub",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-3d5da587-71bd-41f5-ac95-dd3330c2d58d": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "eventHubRuleId-3d5da587-71bd-41f5-ac95-dd3330c2d58d": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules"
+        }
+    },
+    "eventHubLocation-3d5da587-71bd-41f5-ac95-dd3330c2d58d": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Event Hub Location",
+            "description": "The location the Event Hub resides in. Only Search Services in this location will be linked to this Event Hub.",
+            "strongType": "location"
+        }
+    },
+    "metricsEnabled-3d5da587-71bd-41f5-ac95-dd3330c2d58d": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        }
+    },
+    "logsEnabled-3d5da587-71bd-41f5-ac95-dd3330c2d58d": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        }
+    },
+    "effect-4daddf25-4823-43d4-88eb-2419eb6dcc08": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Data Lake Analytics to Event Hub",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-4daddf25-4823-43d4-88eb-2419eb6dcc08": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "eventHubRuleId-4daddf25-4823-43d4-88eb-2419eb6dcc08": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules"
+        }
+    },
+    "eventHubLocation-4daddf25-4823-43d4-88eb-2419eb6dcc08": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Event Hub Location",
+            "description": "The location the Event Hub resides in. Only Data Lake Analytics in this location will be linked to this Event Hub.",
+            "strongType": "location"
+        }
+    },
+    "metricsEnabled-4daddf25-4823-43d4-88eb-2419eb6dcc08": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        }
+    },
+    "logsEnabled-4daddf25-4823-43d4-88eb-2419eb6dcc08": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        }
+    },
+    "listOfImageIdToInclude_windows-5c3bc7b8-a64c-4e08-a9cd-7ff0f31e1138": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Optional: List of virtual machine images that have supported Windows OS to add to scope",
+            "description": "Example value: '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage'"
+        }
+    },
+    "listOfImageIdToInclude_linux-5c3bc7b8-a64c-4e08-a9cd-7ff0f31e1138": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Optional: List of virtual machine images that have supported Linux OS to add to scope",
+            "description": "Example value: '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage'"
+        }
+    },
+    "logAnalytics-5ee9e9ed-0b42-41b7-8c9c-3cfb2fbe2069": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "listOfImageIdToInclude-5ee9e9ed-0b42-41b7-8c9c-3cfb2fbe2069": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Optional: List of VM images that have supported Linux OS to add to scope",
+            "description": "Example value: '/subscriptions/<subscriptionId>/resourceGroups/YourResourceGroup/providers/Microsoft.Compute/images/ContosoStdImage'"
+        }
+    },
+    "effect-6b51af03-9277-49a9-a3f8-1c69c9ff7403": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Service Bus to Event Hub",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-6b51af03-9277-49a9-a3f8-1c69c9ff7403": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "eventHubRuleId-6b51af03-9277-49a9-a3f8-1c69c9ff7403": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules"
+        }
+    },
+    "eventHubLocation-6b51af03-9277-49a9-a3f8-1c69c9ff7403": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Event Hub Location",
+            "description": "The location the Event Hub resides in. Only Service Bus in this location will be linked to this Event Hub.",
+            "strongType": "location"
+        }
+    },
+    "metricsEnabled-6b51af03-9277-49a9-a3f8-1c69c9ff7403": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        }
+    },
+    "logsEnabled-6b51af03-9277-49a9-a3f8-1c69c9ff7403": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        }
+    },
+    "listOfResourceTypes-7f89b1eb-583c-429a-8828-af049802c1d9": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Resource Types",
+            "strongType": "resourceTypes"
+        }
+    },
+    "effect-a1dae6c7-13f3-48ea-a149-ff8442661f60": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Logic Apps to Event Hub",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-a1dae6c7-13f3-48ea-a149-ff8442661f60": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "eventHubRuleId-a1dae6c7-13f3-48ea-a149-ff8442661f60": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules"
+        }
+    },
+    "eventHubLocation-a1dae6c7-13f3-48ea-a149-ff8442661f60": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Event Hub Location",
+            "description": "The location the Event Hub resides in. Only Logic Apps in this location will be linked to this Event Hub.",
+            "strongType": "location"
+        }
+    },
+    "metricsEnabled-a1dae6c7-13f3-48ea-a149-ff8442661f60": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        }
+    },
+    "logsEnabled-a1dae6c7-13f3-48ea-a149-ff8442661f60": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        }
+    },
+    "effect-b889a06c-ec72-4b03-910a-cb169ee18721": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Logic Apps to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-b889a06c-ec72-4b03-910a-cb169ee18721": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-b889a06c-ec72-4b03-910a-cb169ee18721": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "metricsEnabled-b889a06c-ec72-4b03-910a-cb169ee18721": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logsEnabled-b889a06c-ec72-4b03-910a-cb169ee18721": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "effect-bef3f64c-5290-43b7-85b0-9b254eef4c47": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Key Vault to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-bef3f64c-5290-43b7-85b0-9b254eef4c47": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-bef3f64c-5290-43b7-85b0-9b254eef4c47": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "metricsEnabled-bef3f64c-5290-43b7-85b0-9b254eef4c47": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logsEnabled-bef3f64c-5290-43b7-85b0-9b254eef4c47": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "effect-c84e5349-db6d-4769-805e-e14037dab9b5": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Batch Account to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-c84e5349-db6d-4769-805e-e14037dab9b5": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-c84e5349-db6d-4769-805e-e14037dab9b5": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "metricsEnabled-c84e5349-db6d-4769-805e-e14037dab9b5": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logsEnabled-c84e5349-db6d-4769-805e-e14037dab9b5": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "storagePrefix-c9c29499-c1d1-4195-99bd-2ec9e3a9dc89": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Storage Account Prefix for Regional Storage Account",
+            "description": "This prefix will be combined with the network security group location to form the created storage account name."
+        }
+    },
+    "rgName-c9c29499-c1d1-4195-99bd-2ec9e3a9dc89": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Resource Group Name for Storage Account (must exist)",
+            "description": "The resource group that the storage account will be created in. This resource group must already exist.",
+            "strongType": "ExistingResourceGroups"
+        }
+    },
+    "effect-d550e854-df1a-4de9-bf44-cd894b39a95e": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Azure Monitor Logs for Application Insights should be linked to a Log Analytics workspace",
+            "description": "The effect determines what happens when the policy rule is evaluated to match"
+        }
+    },
+    "effect-d56a5a7c-72d7-42bc-8ceb-3baf4c0eae03": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Data Lake Analytics to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-d56a5a7c-72d7-42bc-8ceb-3baf4c0eae03": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "logAnalytics-d56a5a7c-72d7-42bc-8ceb-3baf4c0eae03": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select Log Analytics workspace from dropdown list. If this workspace is outside of the scope of the assignment you must manually grant 'Log Analytics Contributor' permissions (or similar) to the policy assignment's principal ID.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "metricsEnabled-d56a5a7c-72d7-42bc-8ceb-3baf4c0eae03": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "logsEnabled-d56a5a7c-72d7-42bc-8ceb-3baf4c0eae03": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Log Analytics workspace - True or False"
+        }
+    },
+    "effect-db51110f-0865-4a6e-b274-e2e07a5b2cd7": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Batch Account to Event Hub",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-db51110f-0865-4a6e-b274-e2e07a5b2cd7": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "eventHubRuleId-db51110f-0865-4a6e-b274-e2e07a5b2cd7": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules"
+        }
+    },
+    "eventHubLocation-db51110f-0865-4a6e-b274-e2e07a5b2cd7": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Event Hub Location",
+            "description": "The location the Event Hub resides in. Only Batch Accounts in this location will be linked to this Event Hub.",
+            "strongType": "location"
+        }
+    },
+    "metricsEnabled-db51110f-0865-4a6e-b274-e2e07a5b2cd7": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        }
+    },
+    "logsEnabled-db51110f-0865-4a6e-b274-e2e07a5b2cd7": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        }
+    },
+    "effect-e8d096bc-85de-4c5f-8cfb-857bd1b9d62d": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Data Lake Storage Gen1 to Event Hub",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-e8d096bc-85de-4c5f-8cfb-857bd1b9d62d": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "eventHubRuleId-e8d096bc-85de-4c5f-8cfb-857bd1b9d62d": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules"
+        }
+    },
+    "eventHubLocation-e8d096bc-85de-4c5f-8cfb-857bd1b9d62d": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Event Hub Location",
+            "description": "The location the Event Hub resides in. Only Data Lake Storage in this location will be linked to this Event Hub.",
+            "strongType": "location"
+        }
+    },
+    "metricsEnabled-e8d096bc-85de-4c5f-8cfb-857bd1b9d62d": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        }
+    },
+    "logsEnabled-e8d096bc-85de-4c5f-8cfb-857bd1b9d62d": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        }
+    },
+    "effect-edf3780c-3d70-40fe-b17e-ab72013dafca": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Stream Analytics to Event Hub",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-edf3780c-3d70-40fe-b17e-ab72013dafca": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "eventHubRuleId-edf3780c-3d70-40fe-b17e-ab72013dafca": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules"
+        }
+    },
+    "eventHubLocation-edf3780c-3d70-40fe-b17e-ab72013dafca": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Event Hub Location",
+            "description": "The location the Event Hub resides in. Only Stream Analytics in this location will be linked to this Event Hub.",
+            "strongType": "location"
+        }
+    },
+    "metricsEnabled-edf3780c-3d70-40fe-b17e-ab72013dafca": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        }
+    },
+    "logsEnabled-edf3780c-3d70-40fe-b17e-ab72013dafca": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        }
+    },
+    "effect-ef7b61ef-b8e4-4c91-8e78-6946c6b0023f": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Diagnostic Settings for Event Hub to Event Hub",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-ef7b61ef-b8e4-4c91-8e78-6946c6b0023f": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "eventHubRuleId-ef7b61ef-b8e4-4c91-8e78-6946c6b0023f": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules"
+        }
+    },
+    "eventHubLocation-ef7b61ef-b8e4-4c91-8e78-6946c6b0023f": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Event Hub Destination Location",
+            "description": "The location the Event Hub that will get diagnostic data resides in. Only source Event Hubs in this location will be linked to this destination Event Hub.",
+            "strongType": "location"
+        }
+    },
+    "metricsEnabled-ef7b61ef-b8e4-4c91-8e78-6946c6b0023f": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        }
+    },
+    "logsEnabled-ef7b61ef-b8e4-4c91-8e78-6946c6b0023f": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        }
+    },
+    "effect-fa298e57-9444-42ba-bf04-86e8470e32c7": {
+        "type": "String",
+        "defaultValue": "audit",
+        "allowedValues": [
+            "audit",
+            "deny",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Saved-queries in Azure Monitor should be saved in customer storage account for logs encryption",
+            "description": "The effect determines what happens when the policy rule is evaluated to match"
+        }
+    },
+    "effect-055aa869-bc98-4af8-bafc-23f1ab6ffe2c": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Web Application Firewall (WAF) should be enabled for Azure Front Door Service service",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "nsgRegion-0db34a60-64f4-4bf6-bd44-f95c16cf34b9": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "NSG Region",
+            "description": "This Policy will review NSGs only in the selected region. You can create other assignments to include other regions.",
+            "strongType": "location"
+        }
+    },
+    "storageId-0db34a60-64f4-4bf6-bd44-f95c16cf34b9": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Storage id",
+            "description": "A string with the storage id for the flowlogs to be sent to. It will be used for deployment purposes only. Make sure this storage account is located in the same region as the NSG. The format must be: '/subscriptions/{subscription id}/resourceGroups/{resourceGroup name}/providers/Microsoft.Storage/storageAccounts/{storage account name}"
+        }
+    },
+    "networkWatcherRG-0db34a60-64f4-4bf6-bd44-f95c16cf34b9": {
+        "type": "String",
+        "defaultValue": "NetworkWatcherRG",
+        "metadata": {
+            "displayName": "Network Watchers RG",
+            "description": "The name of the resource group where the flowLog resources will be created. This will be used only if a deployment is required. This is the resource group where the Network Watchers are located.",
+            "strongType": "existingResourceGroups"
+        }
+    },
+    "networkWatcherName-0db34a60-64f4-4bf6-bd44-f95c16cf34b9": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Network Watcher name",
+            "description": "The name of the network watcher under which the flowLog resources will be created. Make sure it belongs to the same region as the NSG."
+        }
+    },
+    "effect-12430be1-6cc8-4527-a9a8-e3d38f250096": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Web Application Firewall (WAF) should use the specified mode for Application Gateway",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "modeRequirement-12430be1-6cc8-4527-a9a8-e3d38f250096": {
+        "type": "String",
+        "defaultValue": "Prevention",
+        "allowedValues": [
+            "Prevention",
+            "Detection"
+        ],
+        "metadata": {
+            "displayName": "Mode Requirement",
+            "description": "Mode required for all WAF policies"
+        }
+    },
+    "effect-425bea59-a659-4cbb-8d31-34499bd030b8": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Web Application Firewall (WAF) should use the specified mode for Azure Front Door Service",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "modeRequirement-425bea59-a659-4cbb-8d31-34499bd030b8": {
+        "type": "String",
+        "defaultValue": "Prevention",
+        "allowedValues": [
+            "Prevention",
+            "Detection"
+        ],
+        "metadata": {
+            "displayName": "Mode Requirement",
+            "description": "Mode required for all WAF policies"
+        }
+    },
+    "IPsecEncryption-50b83b09-03da-41c1-b656-c293c914862b": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "IPsec Encryption",
+            "description": "IPsec Encryption"
+        }
+    },
+    "IPsecIntegrity-50b83b09-03da-41c1-b656-c293c914862b": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "IPsec Integrity",
+            "description": "IPsec Integrity"
+        }
+    },
+    "IKEEncryption-50b83b09-03da-41c1-b656-c293c914862b": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "IKE Encryption",
+            "description": "IKE Encryption"
+        }
+    },
+    "IKEIntegrity-50b83b09-03da-41c1-b656-c293c914862b": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "IKE Integrity",
+            "description": "IKE Integrity"
+        }
+    },
+    "DHGroup-50b83b09-03da-41c1-b656-c293c914862b": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "DH Group",
+            "description": "DH Group"
+        }
+    },
+    "PFSGroup-50b83b09-03da-41c1-b656-c293c914862b": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "PFS Group",
+            "description": "PFS Group"
+        }
+    },
+    "effect-564feb30-bf6a-4854-b4bb-0d2d2d1e6c66": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Web Application Firewall (WAF) should be enabled for Application Gateway",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "resourceGroupName-b6e2945c-0b7b-40f5-9233-7a5323b5cdc6": {
+        "type": "String",
+        "defaultValue": "NetworkWatcherRG",
+        "metadata": {
+            "displayName": "NetworkWatcher resource group name",
+            "description": "Name of the resource group of NetworkWatcher, such as NetworkWatcherRG. This is the resource group where the Network Watchers are located."
+        }
+    },
+    "effect-d416745a-506c-48b6-8ab1-83cb814bcaa3": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Virtual machines should be connected to an approved virtual network",
+            "description": "The effect determines what happens when the policy rule is evaluated to match"
+        }
+    },
+    "virtualNetworkId-d416745a-506c-48b6-8ab1-83cb814bcaa3": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Virtual network Id",
+            "description": "Resource Id of the virtual network. Example: /subscriptions/YourSubscriptionId/resourceGroups/YourResourceGroupName/providers/Microsoft.Network/virtualNetworks/Name"
+        }
+    },
+    "virtualNetworkGatewayId-f1776c76-f58c-4245-a8d0-2b207198dc8b": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Virtual network gateway Id",
+            "description": "Resource Id of the virtual network gateway. Example: /subscriptions/YourSubscriptionId/resourceGroups/YourResourceGroup/providers/Microsoft.Network/virtualNetworkGateways/Name"
+        }
+    },
+    "effect-6df2fee6-a9ed-4fef-bced-e13be1b25f1c": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Enable Security Center's auto provisioning of the Log Analytics agent on your subscriptions with default workspace.",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-8e7da0a5-0a0e-4bbc-bfc0-7773c018b616": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Enable Security Center's auto provisioning of the Log Analytics agent on your subscriptions with custom workspace.",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "logAnalytics-8e7da0a5-0a0e-4bbc-bfc0-7773c018b616": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Auto provision the Log Analytics agent on your subscriptions to monitor and collect security data using a custom workspace.",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "resourceGroupName-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Resource group name",
+            "description": "The resource group name where the export to Log Analytics workspace configuration is created. If you enter a name for a resource group that doesn't exist, it'll be created in the subscription. Note that each resource group can only have one export to Log Analytics workspace configured."
+        }
+    },
+    "resourceGroupLocation-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "String",
+        "defaultValue": "SoutheastAsia",
+        "metadata": {
+            "displayName": "Resource group location",
+            "description": "The location where the resource group and the export to Log Analytics workspace configuration are created.",
+            "strongType": "location"
+        }
+    },
+    "exportedDataTypes-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "Array",
+        "defaultValue": [],
+        "allowedValues": [
+            "Security recommendations",
+            "Security alerts",
+            "Overall secure score",
+            "Secure score controls",
+            "Regulatory compliance",
+            "Overall secure score - snapshot",
+            "Secure score controls - snapshot",
+            "Regulatory compliance - snapshot"
+        ],
+        "metadata": {
+            "displayName": "Exported data types",
+            "description": "The data types to be exported. To export a snapshot (preview) of the data once a week, choose the data types which contains 'snapshot', other data types will be sent in real-time streaming."
+        }
+    },
+    "recommendationNames-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Recommendation IDs",
+            "description": "Applicable only for export of security recommendations. To export all recommendations, leave this empty. To export specific recommendations, enter a list of recommendation IDs separated by semicolons (';'). Recommendation IDs are available through the Assessments API (https://docs.microsoft.com/rest/api/securitycenter/assessments), or Azure Resource Graph Explorer, choose securityresources and microsoft.security/assessments."
+        }
+    },
+    "recommendationSeverities-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "Array",
+        "defaultValue": [
+            "High"
+        ],
+        "allowedValues": [
+            "High",
+            "Medium",
+            "Low"
+        ],
+        "metadata": {
+            "displayName": "Recommendation severities",
+            "description": "Applicable only for export of security recommendations. Determines recommendation severities. Example: High;Medium;Low;"
+        }
+    },
+    "isSecurityFindingsEnabled-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "Boolean",
+        "defaultValue": false,
+        "metadata": {
+            "displayName": "Include security findings",
+            "description": "Security findings are results from vulnerability assessment solutions, and can be thought of as 'sub' recommendations grouped into a 'parent' recommendation."
+        }
+    },
+    "secureScoreControlsNames-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Secure Score Controls IDs",
+            "description": "Applicable only for export of secure score controls. To export all secure score controls, leave this empty. To export specific secure score controls, enter a list of secure score controls IDs separated by semicolons (';'). Secure score controls IDs are available through the Secure score controls API (https://docs.microsoft.com/rest/api/securitycenter/securescorecontrols), or Azure Resource Graph Explorer, choose securityresources and microsoft.security/securescores/securescorecontrols."
+        }
+    },
+    "alertSeverities-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "Array",
+        "defaultValue": [
+            "High"
+        ],
+        "allowedValues": [
+            "High",
+            "Medium",
+            "Low"
+        ],
+        "metadata": {
+            "displayName": "Alert severities",
+            "description": "Applicable only for export of security alerts. Determines alert severities. Example: High;Medium;Low;"
+        }
+    },
+    "regulatoryComplianceStandardsNames-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "Array",
+        "defaultValue": [],
+        "metadata": {
+            "displayName": "Regulatory compliance standards names",
+            "description": "Applicable only for export of regulatory compliance. To export all regulatory compliance, leave this empty. To export specific regulatory compliance standards, enter a list of these standards names separated by semicolons (';'). Regulatory compliance standards names are available through the regulatory compliance standards API (https://docs.microsoft.com/rest/api/securitycenter/regulatorycompliancestandards), or Azure Resource Graph Explorer, choose securityresources and microsoft.security/regulatorycompliancestandards."
+        }
+    },
+    "workspaceResourceId-ffb6f416-7bd2-4488-8828-56585fef2be9": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "The Log Analytics workspace of where the data should be exported to.",
+            "strongType": "Microsoft.OperationalInsights/workspaces"
+        }
+    },
+    "effect-1b8ca024-1d5c-4dec-8995-b1a932b41780": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Public network access on Azure SQL Database should be disabled",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-24fba194-95d6-48c0-aea7-f65bf859c598": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Infrastructure encryption should be enabled for Azure Database for PostgreSQL servers",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-28b0b1e5-17ba-4963-a7a4-5a1ab4400a0b": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "Modify",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Configure Azure SQL Server to disable public network access",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-3a58212a-c829-4f13-9872-6371df2fd0b4": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Infrastructure encryption should be enabled for Azure Database for MySQL servers",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-5e1de0e3-42cb-4ebc-a86d-61d0c619ca48": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Public network access should be disabled for PostgreSQL flexible servers",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "subnetId-77e8b146-0078-4fb2-b002-e112381199f0": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Subnet ID",
+            "description": "The resource ID of the virtual network subnet that should have a rule enabled. Example: /subscriptions/00000000-1111-2222-3333-444444444444/resourceGroups/Default/providers/Microsoft.Network/virtualNetworks/testvnet/subnets/testsubnet",
+            "strongType": "Microsoft.Network/virtualNetworks/subnets"
+        }
+    },
+    "privateEndpointSubnetId-8e8ca470-d980-4831-99e6-dc70d9f6af87": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Subnet to use for Private Endpoints",
+            "description": "The name of the subnet within the virtual network that you would like to use for your Private Endpoint Connection deployment",
+            "strongType": "Microsoft.Network/virtualNetworks/subnets"
+        }
+    },
+    "effect-8e8ca470-d980-4831-99e6-dc70d9f6af87": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Configure Azure SQL Server to enable private endpoint connections",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "profileName-9a7c7a7d-49e5-4213-bea8-6a502b6272e0": {
+        "type": "String",
+        "defaultValue": "setbypolicy",
+        "metadata": {
+            "displayName": "Profile name",
+            "description": "The diagnostic settings profile name"
+        }
+    },
+    "eventHubRuleId-9a7c7a7d-49e5-4213-bea8-6a502b6272e0": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Event Hub Authorization Rule Id",
+            "description": "The Event Hub authorization rule Id for Azure Diagnostics. The authorization rule needs to be at Event Hub namespace level. e.g. /subscriptions/{subscription Id}/resourceGroups/{resource group}/providers/Microsoft.EventHub/namespaces/{Event Hub namespace}/authorizationrules/{authorization rule}",
+            "strongType": "Microsoft.EventHub/Namespaces/AuthorizationRules"
+        }
+    },
+    "metricsEnabled-9a7c7a7d-49e5-4213-bea8-6a502b6272e0": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable metrics",
+            "description": "Whether to enable metrics stream to the Event Hub - True or False"
+        }
+    },
+    "logsEnabled-9a7c7a7d-49e5-4213-bea8-6a502b6272e0": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Enable logs",
+            "description": "Whether to enable logs stream to the Event Hub  - True or False"
+        }
+    },
+    "setting-a6fb4358-5bf4-4ad7-ba82-2cd2f41ce5e9": {
+        "type": "String",
+        "defaultValue": "disabled",
+        "allowedValues": [
+            "enabled",
+            "disabled"
+        ],
+        "metadata": {
+            "displayName": "Desired Auditing setting"
+        }
+    },
+    "effect-a9934fd7-29f2-4e6d-ab3d-607ea38e9079": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:SQL Managed Instances should avoid using GRS backup redundancy",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-b219b9cf-f672-4f96-9ab0-f5a3ac5e1c13": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:SQL Database should avoid using GRS backup redundancy",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy - Configure diagnostic settings for SQL Databases to Log Analytics workspace",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "diagnosticsSettingNameToUse-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "setByPolicy",
+        "metadata": {
+            "displayName": "Setting name",
+            "description": "Name of the diagnostic settings."
+        }
+    },
+    "logAnalytics-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "setbypolicy_logAnalytics",
+        "metadata": {
+            "displayName": "Log Analytics workspace",
+            "description": "Select the Log Analytics workspace from dropdown list",
+            "strongType": "omsWorkspace"
+        }
+    },
+    "QueryStoreRuntimeStatisticsEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "QueryStoreRuntimeStatistics - Enabled",
+            "description": "Whether to stream QueryStoreRuntimeStatistics logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "QueryStoreWaitStatisticsEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "QueryStoreWaitStatistics - Enabled",
+            "description": "Whether to stream QueryStoreWaitStatistics logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "ErrorsEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Errors - Enabled",
+            "description": "Whether to stream Errors logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "DatabaseWaitStatisticsEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "DatabaseWaitStatistics - Enabled",
+            "description": "Whether to stream DatabaseWaitStatistics logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "BlocksEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Blocks - Enabled",
+            "description": "Whether to stream Blocks logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "SQLInsightsEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "SQLInsights - Enabled",
+            "description": "Whether to stream SQLInsights logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "SQLSecurityAuditEventsEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "SQLSecurityAuditEvents - Enabled",
+            "description": "Whether to stream SQLSecurityAuditEvents logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "TimeoutsEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Timeouts - Enabled",
+            "description": "Whether to stream Timeouts logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "AutomaticTuningEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "AutomaticTuning - Enabled",
+            "description": "Whether to stream AutomaticTuning logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "DeadlocksEnabled-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Deadlocks - Enabled",
+            "description": "Whether to stream Deadlocks logs to the Log Analytics workspace - True or False"
+        }
+    },
+    "Basic-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "Basic (metric) - Enabled",
+            "description": "Whether to stream Basic metrics to the Log Analytics workspace - True or False"
+        }
+    },
+    "InstanceAndAppAdvanced-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "InstanceAndAppAdvanced (metric) - Enabled",
+            "description": "Whether to stream InstanceAndAppAdvanced metrics to the Log Analytics workspace - True or False"
+        }
+    },
+    "WorkloadManagement-b79fa14e-238a-4c2d-b376-442ce508fc84": {
+        "type": "String",
+        "defaultValue": "True",
+        "allowedValues": [
+            "True",
+            "False"
+        ],
+        "metadata": {
+            "displayName": "WorkloadManagement (metric) - Enabled",
+            "description": "Whether to stream WorkloadManagement metrics to the Log Analytics workspace - True or False"
+        }
+    },
+    "effect-c9299215-ae47-4f50-9c54-8a392f68a052": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Public network access should be disabled for MySQL flexible servers",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-0e07b2e9-6cd9-4c40-9ccb-52817b95133b": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "Modify",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Modify - Configure Azure File Sync to disable public network access",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-361c2074-3595-4e5d-8cab-4f21dffc835c": {
+        "type": "String",
+        "defaultValue": "Disabled",
+        "allowedValues": [
+            "DeployIfNotExists",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Deploy Advanced Threat Protection on storage accounts",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-404c3081-a854-4457-ae30-26a93ef643f9": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Secure transfer to storage accounts should be enabled",
+            "description": "The effect determines what happens when the policy rule is evaluated to match"
+        }
+    },
+    "effect-4733ea7b-a883-42fe-8cac-97454c2a9e4a": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Storage accounts should have infrastructure encryption",
+            "description": "Enable or disable the execution of the audit policy"
+        }
+    },
+    "effect-970f84d8-71b6-4091-9979-ace7e3fb6dbb": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Disabled",
+            "Deny"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:HPC Cache accounts should use customer-managed key for encryption",
+            "description": "Enable or disable the execution of the policy"
+        }
+    },
+    "effect-c9d007d0-c057-4772-b18c-01e546713bcd": {
+        "type": "String",
+        "defaultValue": "Audit",
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "metadata": {
+            "displayName": "Effect for policy:Storage accounts should allow access from trusted Microsoft services",
+            "description": "The effect determines what happens when the policy rule is evaluated to match"
+        }
+    }
+}

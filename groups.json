@@ -1,0 +1,466 @@
+[
+    {
+        "name": "RMiT_v1.0_10.1",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.1"
+    },
+    {
+        "name": "RMiT_v1.0_10.10",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.10"
+    },
+    {
+        "name": "RMiT_v1.0_10.11",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.11"
+    },
+    {
+        "name": "RMiT_v1.0_10.12",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.12"
+    },
+    {
+        "name": "RMiT_v1.0_10.13",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.13"
+    },
+    {
+        "name": "RMiT_v1.0_10.14",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.14"
+    },
+    {
+        "name": "RMiT_v1.0_10.15",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.15"
+    },
+    {
+        "name": "RMiT_v1.0_10.16",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.16"
+    },
+    {
+        "name": "RMiT_v1.0_10.17",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.17"
+    },
+    {
+        "name": "RMiT_v1.0_10.18",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.18"
+    },
+    {
+        "name": "RMiT_v1.0_10.19",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.19"
+    },
+    {
+        "name": "RMiT_v1.0_10.2",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.2"
+    },
+    {
+        "name": "RMiT_v1.0_10.20",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.20"
+    },
+    {
+        "name": "RMiT_v1.0_10.21",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.21"
+    },
+    {
+        "name": "RMiT_v1.0_10.22",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.22"
+    },
+    {
+        "name": "RMiT_v1.0_10.23",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.23"
+    },
+    {
+        "name": "RMiT_v1.0_10.24",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.24"
+    },
+    {
+        "name": "RMiT_v1.0_10.25",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.25"
+    },
+    {
+        "name": "RMiT_v1.0_10.26",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.26"
+    },
+    {
+        "name": "RMiT_v1.0_10.27",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.27"
+    },
+    {
+        "name": "RMiT_v1.0_10.28",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.28"
+    },
+    {
+        "name": "RMiT_v1.0_10.29",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.29"
+    },
+    {
+        "name": "RMiT_v1.0_10.3",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.3"
+    },
+    {
+        "name": "RMiT_v1.0_10.30",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.30"
+    },
+    {
+        "name": "RMiT_v1.0_10.31",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.31"
+    },
+    {
+        "name": "RMiT_v1.0_10.32",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.32"
+    },
+    {
+        "name": "RMiT_v1.0_10.33",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.33"
+    },
+    {
+        "name": "RMiT_v1.0_10.34",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.34"
+    },
+    {
+        "name": "RMiT_v1.0_10.35",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.35"
+    },
+    {
+        "name": "RMiT_v1.0_10.36",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.36"
+    },
+    {
+        "name": "RMiT_v1.0_10.37",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.37"
+    },
+    {
+        "name": "RMiT_v1.0_10.38",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.38"
+    },
+    {
+        "name": "RMiT_v1.0_10.39",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.39"
+    },
+    {
+        "name": "RMiT_v1.0_10.4",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.4"
+    },
+    {
+        "name": "RMiT_v1.0_10.40",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.40"
+    },
+    {
+        "name": "RMiT_v1.0_10.41",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.41"
+    },
+    {
+        "name": "RMiT_v1.0_10.42",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.42"
+    },
+    {
+        "name": "RMiT_v1.0_10.43",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.43"
+    },
+    {
+        "name": "RMiT_v1.0_10.44",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.44"
+    },
+    {
+        "name": "RMiT_v1.0_10.45",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.45"
+    },
+    {
+        "name": "RMiT_v1.0_10.46",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.46"
+    },
+    {
+        "name": "RMiT_v1.0_10.47",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.47"
+    },
+    {
+        "name": "RMiT_v1.0_10.48",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.48"
+    },
+    {
+        "name": "RMiT_v1.0_10.49",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.49"
+    },
+    {
+        "name": "RMiT_v1.0_10.5",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.5"
+    },
+    {
+        "name": "RMiT_v1.0_10.50",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.50"
+    },
+    {
+        "name": "RMiT_v1.0_10.51",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.51"
+    },
+    {
+        "name": "RMiT_v1.0_10.53",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.53"
+    },
+    {
+        "name": "RMiT_v1.0_10.54",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.54"
+    },
+    {
+        "name": "RMiT_v1.0_10.55",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.55"
+    },
+    {
+        "name": "RMiT_v1.0_10.56",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.56"
+    },
+    {
+        "name": "RMiT_v1.0_10.57",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.57"
+    },
+    {
+        "name": "RMiT_v1.0_10.58",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.58"
+    },
+    {
+        "name": "RMiT_v1.0_10.59",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.59"
+    },
+    {
+        "name": "RMiT_v1.0_10.6",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.6"
+    },
+    {
+        "name": "RMiT_v1.0_10.60",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.60"
+    },
+    {
+        "name": "RMiT_v1.0_10.61",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.61"
+    },
+    {
+        "name": "RMiT_v1.0_10.62",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.62"
+    },
+    {
+        "name": "RMiT_v1.0_10.63",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.63"
+    },
+    {
+        "name": "RMiT_v1.0_10.64",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.64"
+    },
+    {
+        "name": "RMiT_v1.0_10.65",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.65"
+    },
+    {
+        "name": "RMiT_v1.0_10.66",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.66"
+    },
+    {
+        "name": "RMiT_v1.0_10.67",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.67"
+    },
+    {
+        "name": "RMiT_v1.0_10.68",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.68"
+    },
+    {
+        "name": "RMiT_v1.0_10.69",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.69"
+    },
+    {
+        "name": "RMiT_v1.0_10.7",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.7"
+    },
+    {
+        "name": "RMiT_v1.0_10.70",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.70"
+    },
+    {
+        "name": "RMiT_v1.0_10.71",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.71"
+    },
+    {
+        "name": "RMiT_v1.0_10.72",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.72"
+    },
+    {
+        "name": "RMiT_v1.0_10.73",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.73"
+    },
+    {
+        "name": "RMiT_v1.0_10.74",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.74"
+    },
+    {
+        "name": "RMiT_v1.0_10.75",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.75"
+    },
+    {
+        "name": "RMiT_v1.0_10.76",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.76"
+    },
+    {
+        "name": "RMiT_v1.0_10.77",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.77"
+    },
+    {
+        "name": "RMiT_v1.0_10.78",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.78"
+    },
+    {
+        "name": "RMiT_v1.0_10.79",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.79"
+    },
+    {
+        "name": "RMiT_v1.0_10.8",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.8"
+    },
+    {
+        "name": "RMiT_v1.0_10.80",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.80"
+    },
+    {
+        "name": "RMiT_v1.0_10.81",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.81"
+    },
+    {
+        "name": "RMiT_v1.0_10.82",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.82"
+    },
+    {
+        "name": "RMiT_v1.0_10.9",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_10.9"
+    },
+    {
+        "name": "RMiT_v1.0_11.1",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.1"
+    },
+    {
+        "name": "RMiT_v1.0_11.10",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.10"
+    },
+    {
+        "name": "RMiT_v1.0_11.11",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.11"
+    },
+    {
+        "name": "RMiT_v1.0_11.12",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.12"
+    },
+    {
+        "name": "RMiT_v1.0_11.13",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.13"
+    },
+    {
+        "name": "RMiT_v1.0_11.14",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.14"
+    },
+    {
+        "name": "RMiT_v1.0_11.15",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.15"
+    },
+    {
+        "name": "RMiT_v1.0_11.16",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.16"
+    },
+    {
+        "name": "RMiT_v1.0_11.17",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.17"
+    },
+    {
+        "name": "RMiT_v1.0_11.18",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.18"
+    },
+    {
+        "name": "RMiT_v1.0_11.19",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.19"
+    },
+    {
+        "name": "RMiT_v1.0_11.2",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.2"
+    },
+    {
+        "name": "RMiT_v1.0_11.20",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.20"
+    },
+    {
+        "name": "RMiT_v1.0_11.21",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.21"
+    },
+    {
+        "name": "RMiT_v1.0_11.22",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.22"
+    },
+    {
+        "name": "RMiT_v1.0_11.23",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.23"
+    },
+    {
+        "name": "RMiT_v1.0_11.24",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.24"
+    },
+    {
+        "name": "RMiT_v1.0_11.25",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.25"
+    },
+    {
+        "name": "RMiT_v1.0_11.26",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.26"
+    },
+    {
+        "name": "RMiT_v1.0_11.27",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.27"
+    },
+    {
+        "name": "RMiT_v1.0_11.3",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.3"
+    },
+    {
+        "name": "RMiT_v1.0_11.4",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.4"
+    },
+    {
+        "name": "RMiT_v1.0_11.5",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.5"
+    },
+    {
+        "name": "RMiT_v1.0_11.6",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.6"
+    },
+    {
+        "name": "RMiT_v1.0_11.7",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.7"
+    },
+    {
+        "name": "RMiT_v1.0_11.8",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.8"
+    },
+    {
+        "name": "RMiT_v1.0_11.9",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_11.9"
+    },
+    {
+        "name": "RMiT_v1.0_Appendix_5.1",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_Appendix_5.1"
+    },
+    {
+        "name": "RMiT_v1.0_Appendix_5.2",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_Appendix_5.2"
+    },
+    {
+        "name": "RMiT_v1.0_Appendix_5.3",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_Appendix_5.3"
+    },
+    {
+        "name": "RMiT_v1.0_Appendix_5.4",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_Appendix_5.4"
+    },
+    {
+        "name": "RMiT_v1.0_Appendix_5.5",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_Appendix_5.5"
+    },
+    {
+        "name": "RMiT_v1.0_Appendix_5.6",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_Appendix_5.6"
+    },
+    {
+        "name": "RMiT_v1.0_Appendix_5.7",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_Appendix_5.7"
+    },
+    {
+        "name": "RMiT_v1.0_Appendix_5.8",
+        "additionalMetadataId": "/providers/Microsoft.PolicyInsights/policyMetadata/RMiT_v1.0_Appendix_5.8"
+    }
+]
