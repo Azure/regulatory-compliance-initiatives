@@ -1,0 +1,16 @@
+{
+    "extend_es_root": {
+        "policy_assignments": [
+            "RMIT-Malaysia"
+        ],
+        "policy_definitions": [],
+        "policy_set_definitions": [
+            "RMIT-Malaysia"
+        ],
+        "role_definitions": [],
+        "archetype_config": {
+            "parameters": {},
+            "access_control": {}
+        }
+    }
+}
