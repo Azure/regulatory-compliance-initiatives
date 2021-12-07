@@ -39,19 +39,15 @@ Download link: https://www.terraform.io/downloads.html
 2. Setting up Identity for terraform
 In Azure there are a few identity options to deploy your terraform code.<br>
 - **User login**<br>
-Start with this if you are not too familiar with other Azure identities, this requires less steps as well.
-
+Start with this if you are not too familiar with other Azure identities, this requires less steps as well.<br>
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli
 
-Identity alternatives (optional)
+Identity alternatives (optional)<br>
 Use one of these method if your intention is to deploy via pipelines
-- Managed Identity
+- Managed Identity<br>
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/managed_service_identity
 
-- Service Principal
-How to create service principal
-https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal
-
+- Service Principal<br>
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_client_secret
 
 3. Permission check - assign required roles
