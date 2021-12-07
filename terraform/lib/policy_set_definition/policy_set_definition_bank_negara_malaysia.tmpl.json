@@ -5,7 +5,7 @@
     "scope": null,
     "properties": {
         "displayName": "Bank-Negara-RMIT Malaysia",
-        "policyType": "BuiltIn",
+        "policyType": "Custom",
         "description": "This initiative includes policies that address a subset of RMIT requirements. Additional policies will be added in upcoming releases. For more information, visit aka.ms/rmit-initiative.",
         "metadata": {
             "version": "1.0.0-preview",
