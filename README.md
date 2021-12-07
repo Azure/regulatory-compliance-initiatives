@@ -37,8 +37,8 @@ Any use of third-party trademarks or logos are subject to those third-party's po
 Download link: https://www.terraform.io/downloads.html
 
 2. Setting up Identity for terraform
-In Azure there are a few identity options to deploy your terraform code.
-**User login**<br>
+In Azure there are a few identity options to deploy your terraform code.<br>
+- **User login**<br>
 Start with this if you are not too familiar with other Azure identities, this requires less steps as well.
 
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli
