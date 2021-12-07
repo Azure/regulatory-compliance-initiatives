@@ -42,12 +42,10 @@ In Azure there are a few identity options to deploy your terraform code.<br>
 Start with this if you are not too familiar with other Azure identities, this requires less steps as well.<br>
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli
 
-Identity alternatives (optional)<br>
-Use one of these method if your intention is to deploy via pipelines
-- Managed Identity<br>
+- Managed Identity (optional alternative)<br>
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/managed_service_identity
 
-- Service Principal<br>
+- Service Principal (optional alternative)<br>
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_client_secret
 
 3. Permission check - assign required roles
