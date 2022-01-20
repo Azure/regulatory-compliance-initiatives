@@ -2,12 +2,12 @@
 
 variable "root_id" {
   type    = string
-  default = "banknegara"
+  default = "my-bank"
 }
 
 variable "root_name" {
   type    = string
-  default = "Bank Negara Malaysia"
+  default = "Bank Management Group"
 }
 
 variable "deploy_management_resources" {
