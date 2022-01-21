@@ -10,7 +10,7 @@ data "azurerm_client_config" "core" {}
 
 module "enterprise_scale" {
   source  = "Azure/caf-enterprise-scale/azurerm"
-  version = "1.0.0"
+  version = "1.1.1"
 
   providers = {
     azurerm              = azurerm
@@ -27,4 +27,54 @@ module "enterprise_scale" {
   subscription_id_management     = data.azurerm_client_config.core.subscription_id
   configure_management_resources = local.configure_management_resources
 
+  # Configuration settings for optional landing zones
+  deploy_corp_landing_zones   = false
+  deploy_online_landing_zones = false
+  deploy_sap_landing_zones    = false
+  deploy_demo_landing_zones   = false
+
+  custom_landing_zones = {
+    "${var.root_id}-production" = {
+      display_name               = "Production"
+      parent_management_group_id = "${var.root_id}-landing-zones"
+      subscription_ids           = []
+      archetype_config = {
+        archetype_id   = "default_empty"
+        parameters     = {}
+        access_control = {}
+      }
+    }
+    "${var.root_id}-pre-production" = {
+      display_name               = "Pre-Production"
+      parent_management_group_id = "${var.root_id}-landing-zones"
+      subscription_ids           = []
+      archetype_config = {
+        archetype_id   = "default_empty"
+        parameters     = {}
+        access_control = {}
+      }
+    }
+    "${var.root_id}-non-production" = {
+      display_name               = "Non-Production"
+      parent_management_group_id = "${var.root_id}-landing-zones"
+      subscription_ids           = []
+      archetype_config = {
+        archetype_id   = "default_empty"
+        parameters     = {}
+        access_control = {}
+      }
+      # archetype_config = {
+      #   archetype_id   = "customer_online"
+      #   parameters     = {
+      #     Deny-Resource-Locations = {
+      #       listOfAllowedLocations = ["eastus",]
+      #     }
+      #     Deny-RSG-Locations = {
+      #       listOfAllowedLocations = ["eastus",]
+      #     }
+      #   }
+      #   access_control = {}
+      # }
+    }
+  }
 }
