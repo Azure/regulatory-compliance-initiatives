@@ -28,9 +28,9 @@ module "enterprise_scale" {
   configure_management_resources = local.configure_management_resources
 
 # # This will be used for the deployment of all "Connectivity resources" to default`.
-#   deploy_connectivity_resources    = var.deploy_connectivity_resources
-#   subscription_id_connectivity     = data.azurerm_client_config.core.subscription_id
-#   configure_connectivity_resources = local.configure_connectivity_resources
+  deploy_connectivity_resources    = var.deploy_connectivity_resources
+  subscription_id_connectivity     = data.azurerm_client_config.core.subscription_id
+  configure_connectivity_resources = local.configure_connectivity_resources
 
   # Configuration settings for optional landing zones
   deploy_corp_landing_zones   = true
@@ -42,7 +42,7 @@ module "enterprise_scale" {
     "${var.root_id}-production" = {
       display_name               = "Production"
       parent_management_group_id = "${var.root_id}-landing-zones"
-      subscription_ids           = ["de40a933-33fc-47a7-afaf-78f0c6edba9a"]
+      subscription_ids           = []
       archetype_config = {
         archetype_id   = "default_empty"
         parameters     = {}
