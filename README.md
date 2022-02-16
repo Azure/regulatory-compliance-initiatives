@@ -68,15 +68,15 @@ You may follow the guide in this documentation for further reference
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli
 
 Run the following command and login via browser
-```
+```terraform
 az login
 ```
 Check for subscription list given to your user account
-```
+```terraform
 az account show
-```
+```terraform
 You should see the output with the following format.
-```
+```terraform
 [
   {
     "cloudName": "AzureCloud",
@@ -94,7 +94,7 @@ You should see the output with the following format.
 ```
 [Skip if you are already in the correct subscription]
 Here you should make sure you are signed into the correct subscription, otherwise you may use the following command to set to the correct subscription
-```
+```terraform
 az account list
 az account set --subscription="SUB_ID_HERE"
 ```
@@ -102,12 +102,12 @@ az account set --subscription="SUB_ID_HERE"
 ## 3. Run Terraform
 Once you have logged in, make sure you are in the right directory shown in step 1, and run the following commands.
 
-```
+```terraform
 terraform init
 terraform plan
 ```
 You may take this opportunity to verify the planned changes after running terraform plan as it does not apply to your environment yet. Otherwise proceed for deployment by running 
-```
+```terraform
 terraform apply -auto-approve -parallelism=50
 ```
 This process may take up to 30 minutes. Once the run is complete, you may review the changes in the portal under "Management Groups" and "Azure Policy"
@@ -126,7 +126,7 @@ Azure Landing Zones for Financial Services Industry in Malaysia recommends the f
 
 ## To change Management Group name 
 modify variables.tf following parameter value
-```
+```terraform
 variable "root_name" {
   type    = string
   default = "Bank Management Group"
@@ -150,7 +150,7 @@ To deploy Enterprise-scale with a starter configuration based mainly on module d
 Visit [Examples] [Deploy Demo Landing Zone Archetypes](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BExamples%5D-Deploy-Demo-Landing-Zone-Archetypes)
 
 modify main.tf following parameter value set the vaule "true"
-```
+```terraform
   # Configuration settings for optional landing zones
   deploy_corp_landing_zones   = true
   deploy_online_landing_zones = true
@@ -169,7 +169,7 @@ for example the below Landing Zones will be split by 3 groups of environments
 
 You can change this vaule to anything DEV, TEST, PROD or something like [What about our management group hierarchy?](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/faq) the detail guide how to modify the main object parameters [refe to our custom landing zone](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BVariables%5D-custom_landing_zones)
 
-```
+```terraform
 #custom landing zone deployment
 custom_landing_zones = {
     "${var.root_id}-production" = {
@@ -204,6 +204,209 @@ custom_landing_zones = {
     }
   }
 ```
+
+## Hub-spoke network topology in Azure
+The hub virtual network acts as a central point of connectivity to many spoke virtual networks. The hub can also be used as the connectivity point to your on-premises networks. The spoke virtual networks peer with the hub and can be used to isolate workloads.
+
+Hub and spoke is a networking model for efficiently managing common communication or security requirements. It also helps avoid Azure subscription limitations. This model addresses the following concerns:
+
+- Saving on costs and efficient management: Centralize services that can be shared by multiple workloads, like network virtual appliances (NVAs) and DNS servers. With a single location for services, IT can minimize redundant resources and management effort.
+
+- Overcoming subscription limits: Large cloud-based workloads might require using more resources than a single Azure subscription contains. Peering workload virtual networks from different subscriptions to a central hub can overcome these limits. For more information, see [Azure subscription and service limits.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits)
+
+
+- A separation of concerns: You can deploy individual workloads between central IT teams and workload teams.
+
+To [Deploy Connectivity Resources With Custom Settings](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BExamples%5D-Deploy-Connectivity-Resources-With-Custom-Settings)
+
+## Single Subscription deployment
+You can deploy the Hub and spoke in Single Subscription for testng or development. A single hub-and-spoke implementation can scale up to a large number of spokes, but as with every IT system, there are platform limits. The hub deployment is bound to a specific Azure subscription, which has restrictions and limits. One example is a maximum number of virtual network peerings. For more information, see [Azure subscription and service limits.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits)
+
+Step by step guide to [Single Subscription deployment](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Provider-Configuration#single-subscription-deployment)
+
+Edit following file and un comment following code block to deploy 
+### ``` main.tf ``` 
+```
+# This will be used for the deployment of all "Connectivity resources" to default`.
+   deploy_connectivity_resources    = var.deploy_connectivity_resources
+   subscription_id_connectivity     = data.azurerm_client_config.core.subscription_id
+   configure_connectivity_resources = local.configure_connectivity_resources
+```
+
+### ``` settings.connectivity.tf ```
+
+``` terraform
+# Deploy Connectivity Resources With Custom Settings The settings.connectivity.tf file contains a local variable containing the custom configuration for the configure_connectivity_resources input variable. This helps to keep the module block clean, whilst providing clear separation between settings for different groups of resources.
+
+# Configure the connectivity resources settings
+
+configure_connectivity_resources = {
+    settings = {
+      hub_networks = [
+        {
+          enabled = true
+          config = {
+            address_space                = ["10.100.0.0/16", ]
+            location                     = "northeurope"
+            link_to_ddos_protection_plan = true
+            dns_servers                  = []
+            bgp_community                = ""
+            subnets                      = []
+            virtual_network_gateway = {
+              enabled = true
+              config = {
+                address_prefix           = "10.100.1.0/24"
+                gateway_sku_expressroute = "ErGw2AZ"
+                gateway_sku_vpn          = ""
+              }
+            }
+            azure_firewall = {
+              enabled = true
+              config = {
+                address_prefix   = "10.100.0.0/24"
+                enable_dns_proxy = true
+                availability_zones = {
+                  zone_1 = true
+                  zone_2 = true
+                  zone_3 = true
+                }
+              }
+            }
+            spoke_virtual_network_resource_ids      = []
+            enable_outbound_virtual_network_peering = true
+          }
+        },
+        {
+          enabled = true
+          config = {
+            address_space                = ["10.101.0.0/16", ]
+            location                     = "westeurope"
+            link_to_ddos_protection_plan = true
+            dns_servers                  = []
+            bgp_community                = ""
+            subnets                      = []
+            virtual_network_gateway = {
+              enabled = true
+              config = {
+                address_prefix           = "10.101.1.0/24"
+                gateway_sku_expressroute = ""
+                gateway_sku_vpn          = "VpnGw2AZ"
+              }
+            }
+            azure_firewall = {
+              enabled = false
+              config = {
+                address_prefix   = ""
+                enable_dns_proxy = true
+                availability_zones = {
+                  zone_1 = true
+                  zone_2 = true
+                  zone_3 = true
+                }
+              }
+            }
+            spoke_virtual_network_resource_ids      = []
+            enable_outbound_virtual_network_peering = true
+          }
+        },
+      ]
+      vwan_hub_networks = []
+      ddos_protection_plan = {
+        enabled = true
+        config = {
+          location = "northeurope"
+        }
+      }
+      dns = {
+        enabled = true
+        config = {
+          location = null
+          enable_private_link_by_service = {
+            azure_automation_webhook             = true
+            azure_automation_dscandhybridworker  = true
+            azure_sql_database_sqlserver         = true
+            azure_synapse_analytics_sqlserver    = true
+            azure_synapse_analytics_sql          = true
+            storage_account_blob                 = true
+            storage_account_table                = true
+            storage_account_queue                = true
+            storage_account_file                 = true
+            storage_account_web                  = true
+            azure_data_lake_file_system_gen2     = true
+            azure_cosmos_db_sql                  = true
+            azure_cosmos_db_mongodb              = true
+            azure_cosmos_db_cassandra            = true
+            azure_cosmos_db_gremlin              = true
+            azure_cosmos_db_table                = true
+            azure_database_for_postgresql_server = true
+            azure_database_for_mysql_server      = true
+            azure_database_for_mariadb_server    = true
+            azure_key_vault                      = true
+            azure_kubernetes_service_management  = true
+            azure_search_service                 = true
+            azure_container_registry             = true
+            azure_app_configuration_stores       = true
+            azure_backup                         = true
+            azure_site_recovery                  = true
+            azure_event_hubs_namespace           = true
+            azure_service_bus_namespace          = true
+            azure_iot_hub                        = true
+            azure_relay_namespace                = true
+            azure_event_grid_topic               = true
+            azure_event_grid_domain              = true
+            azure_web_apps_sites                 = true
+            azure_machine_learning_workspace     = true
+            signalr                              = true
+            azure_monitor                        = true
+            cognitive_services_account           = true
+            azure_file_sync                      = true
+            azure_data_factory                   = true
+            azure_data_factory_portal            = true
+            azure_cache_for_redis                = true
+          }
+          private_link_locations                                 = []
+          public_dns_zones                                       = []
+          private_dns_zones                                      = []
+          enable_private_dns_zone_virtual_network_link_on_hubs   = true
+          enable_private_dns_zone_virtual_network_link_on_spokes = true
+        }
+      }
+    }
+    location = var.connectivity_resources_location
+    tags     = var.connectivity_resources_tags
+    advanced = null
+  }
+```
+``` variables.tf ``` 
+
+```terraform
+# Connetivity Resouces Use variables to customize the deployment
+variable "connectivity_resources_location" {
+  type    = string
+  default = "southeastasia"
+}
+variable "connectivity_resources_tags" {
+  type = map(string)
+  default = {
+    demo_type = "deploy_connectivity_resources_custom"
+  }
+}
+variable "deploy_connectivity_resources" {
+  type    = bool
+  default = true
+}
+
+```
+## Multi-Subscription deployment
+You can deploy the Hub and spoke in Multi-Subscription this will provide The isolation of Azure components in different Azure subscriptions can satisfy the requirements of different lines of business, such as setting up differentiated levels of access and authorization.
+
+The multiple subscription & hubs increases the cost and management overhead of the system. This increase is only justified by:
+
+- Scalability
+- System limits
+- Redundancy and regional replication for user performance or disaster recovery
+
+Step by step guide to [Multi-Subscription deployment](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Provider-Configuration#multi-subscription-deployment)
 
 ## Contributing
 
