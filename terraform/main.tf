@@ -28,8 +28,8 @@ module "enterprise_scale" {
   configure_management_resources = local.configure_management_resources
 
   # Configuration settings for optional landing zones
-  deploy_corp_landing_zones   = false
-  deploy_online_landing_zones = false
+  deploy_corp_landing_zones   = true
+  deploy_online_landing_zones = true
   deploy_sap_landing_zones    = false
   deploy_demo_landing_zones   = false
 
@@ -76,5 +76,16 @@ module "enterprise_scale" {
       #   access_control = {}
       # }
     }
+    "${var.root_id}-dev" = {
+      display_name               = "Corp-Dev"
+      parent_management_group_id = "${var.root_id}-corp" # place MG under corp's default id
+      subscription_ids           = []
+      archetype_config = {
+        archetype_id   = "default_empty"
+        parameters     = {}
+        access_control = {}
+      }
+    }
+
   }
 }
