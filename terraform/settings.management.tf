@@ -121,7 +121,7 @@ configure_connectivity_resources = {
       ddos_protection_plan = {
         enabled = true
         config = {
-          location = "northeurope"
+          location = "eastasia"
         }
       }
       dns = {

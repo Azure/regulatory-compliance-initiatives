@@ -6,9 +6,11 @@ The purpose of the reference implementation is to guide [Bank Negara of Malaysia
 
 The [Terraform Module for Cloud Adoption Framework Enterprise-scale](https://registry.terraform.io/modules/Azure/caf-enterprise-scale/azurerm/latest) provides an opinionated approach for deploying and managing the core platform capabilities of [Cloud Adoption Framework enterprise-scale landing zone architecture](https://docs.microsoft.com/en-gb/azure/cloud-adoption-framework/ready/landing-zone/) using Terraform.
 
+The following examples are designed to help build an understanding of how to use the module, ranging from basic deployments covering the core resource hierarchy from Enterprise-scale, through to more advanced scenarios.
+
+Setp by setp guide refer [Terraform Module for Cloud Adoption Framework Enterprise-scale repo.](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Examples) 
+
 In this post we will focus on onbording RMiT Compliance as code using Azure Landing Zone terraform. 
-
-
 ## Goals 
 - Establishing the necessary risk frameworks, governance structures, policies, procedures to meet RMiT policies
 - Accelerate the use of Azure in financial services through onboarding multiple types of workloads including, Azure IaaS, Lift & Shift, App Dev and Data & AI.
@@ -27,30 +29,16 @@ You can then further assign it in your Azure Portal in whichever scope.
 
 Note: we’ll need to modify the parameters for some key policies like “allowed location” and “allowed resource type” as they are left empty and will not be able to deploy anything on Azure without it.
 ## Deployment Guide
-### Pre-requisites
-1. Install terraform and add to path for commandline access <br>
-Download link: https://www.terraform.io/downloads.html
 
-2. Setting up Identity for terraform
-In Azure there are a few identity options to deploy your terraform code.<br>
-- **User login**<br>
-Start with this if you are not too familiar with other Azure identities, this requires less steps as well.<br>
-https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli
+Detailed information about how to use, configure and extend this module can be found on our Wiki:
 
-- Managed Identity (optional alternative)<br>
-https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/managed_service_identity
-
-- Service Principal (optional alternative)<br>
-https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/service_principal_client_secret
-
-3. Permission check - assign required roles
-In order for you to deploy the terraform code for you will require the following permissions for any of the identity used.
-
-Scope: root management group
-role: Management Group Contributor
-
-Scope: subscription (targetted subscription)
-role: User Access Administrator
+[Pre-requisites](terraform/pre-rquisites.md)
+[Home](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Home)
+[User Guide](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/User-Guide)
+[Examples](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Frequently-Asked-Questions)
+[Frequently Asked Questions](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Frequently-Asked-Questions)
+[Troubleshooting](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Troubleshooting)
+[Contributing](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Contributing)
 
 ## Deployment Steps
 ## 1. Clone the repo and go to terraform directory where the configuration codes reside.
@@ -58,7 +46,6 @@ role: User Access Administrator
 git clone git@github.com:Azure/regulatory-compliance-initiatives.git
 cd regulatory-compliance-initiatives/terraform/
 ```
-
 ## 2. Login to your identity
 You may follow the guide in this documentation for further reference
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli
@@ -107,7 +94,7 @@ terraform apply -auto-approve -parallelism=50
 ```
 This process may take up to 30 minutes. Once the run is complete, you may review the changes in the portal under "Management Groups" and "Azure Policy"
 
-# How to modify management group
+# 4. How to modify management group
 
 Management Groups enable organizations to efficiently manage access, governance and compliance across all subscriptions. Azure management groups provide a level of scope above subscriptions. Subscriptions are organized into containers called "management groups" and apply Azure Policies and role-based access control to the management groups. All subscriptions within a management group automatically inherit the settings applied to the management group.
 
@@ -133,7 +120,7 @@ variable "root_id" {
 
 ```
 To change root group name visit [Changing Root Parent ID](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/issues/190)  
-# Deploy Demo Landing Zone Archetypes 
+# 5. Deploy Landing Zone Archetypes 
 
 To deploy Enterprise-scale with a starter configuration based mainly on module defaults, including the additional Management Groups used for demonstrating the Enterprise-scale Landing Zone archetypes:
 
@@ -198,8 +185,8 @@ custom_landing_zones = {
     }
   }
 ```
-
-## Hub-spoke network topology in Azure
+  ![Custom Landing Zone](images/landingzonesample.jpg)
+# 6. Hub-spoke network topology in Azure
 The hub virtual network acts as a central point of connectivity to many spoke virtual networks. The hub can also be used as the connectivity point to your on-premises networks. The spoke virtual networks peer with the hub and can be used to isolate workloads.
 
 Hub and spoke is a networking model for efficiently managing common communication or security requirements. It also helps avoid Azure subscription limitations. This model addresses the following concerns:
@@ -208,12 +195,11 @@ Hub and spoke is a networking model for efficiently managing common communicatio
 
 - Overcoming subscription limits: Large cloud-based workloads might require using more resources than a single Azure subscription contains. Peering workload virtual networks from different subscriptions to a central hub can overcome these limits. For more information, see [Azure subscription and service limits.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits)
 
-
 - A separation of concerns: You can deploy individual workloads between central IT teams and workload teams.
 
 To [Deploy Connectivity Resources With Custom Settings](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BExamples%5D-Deploy-Connectivity-Resources-With-Custom-Settings)
 
-## Single Subscription deployment
+# 7. Single Subscription deployment
 You can deploy the Hub and spoke in Single Subscription for testng or development. A single hub-and-spoke implementation can scale up to a large number of spokes, but as with every IT system, there are platform limits. The hub deployment is bound to a specific Azure subscription, which has restrictions and limits. One example is a maximum number of virtual network peerings. For more information, see [Azure subscription and service limits.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits)
 
 Step by step guide to [Single Subscription deployment](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Provider-Configuration#single-subscription-deployment)
@@ -226,7 +212,6 @@ Edit following file and un comment following code block to deploy
    subscription_id_connectivity     = data.azurerm_client_config.core.subscription_id
    configure_connectivity_resources = local.configure_connectivity_resources
 ```
-
 ### ``` settings.connectivity.tf ```
 
 ``` terraform
@@ -241,13 +226,13 @@ configure_connectivity_resources = {
           enabled = true
           config = {
             address_space                = ["10.100.0.0/16", ]
-            location                     = "northeurope"
+            location                     = "southeastasia"
             link_to_ddos_protection_plan = true
             dns_servers                  = []
             bgp_community                = ""
             subnets                      = []
             virtual_network_gateway = {
-              enabled = true
+              enabled = false
               config = {
                 address_prefix           = "10.100.1.0/24"
                 gateway_sku_expressroute = "ErGw2AZ"
@@ -274,13 +259,13 @@ configure_connectivity_resources = {
           enabled = true
           config = {
             address_space                = ["10.101.0.0/16", ]
-            location                     = "westeurope"
+            location                     = "eastasia"
             link_to_ddos_protection_plan = true
             dns_servers                  = []
             bgp_community                = ""
             subnets                      = []
             virtual_network_gateway = {
-              enabled = true
+              enabled = flase
               config = {
                 address_prefix           = "10.101.1.0/24"
                 gateway_sku_expressroute = ""
@@ -308,7 +293,7 @@ configure_connectivity_resources = {
       ddos_protection_plan = {
         enabled = true
         config = {
-          location = "northeurope"
+          location = "eastasia"
         }
       }
       dns = {
@@ -391,7 +376,7 @@ variable "deploy_connectivity_resources" {
 }
 
 ```
-## Multi-Subscription deployment
+# 8. Multi-Subscription deployment
 You can deploy the Hub and spoke in Multi-Subscription this will provide The isolation of Azure components in different Azure subscriptions can satisfy the requirements of different lines of business, such as setting up differentiated levels of access and authorization.
 
 The multiple subscription & hubs increases the cost and management overhead of the system. This increase is only justified by:
@@ -402,24 +387,51 @@ The multiple subscription & hubs increases the cost and management overhead of t
 
 Step by step guide to [Multi-Subscription deployment](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Provider-Configuration#multi-subscription-deployment)
 
+# 9. Enable  RMiT Malaysia regulatory compliance dashboard in Microsoft Defender for Cloud
+
+Microsoft Defender for Cloud continually compares the configuration of your resources with requirements in industry standards, regulations, and benchmarks. The regulatory compliance dashboard provides insights into your compliance posture based on how you're meeting specific compliance requirements.
+## Prerequisites
+To add standards to your dashboard:
+
+- The subscription must have Defender for Cloud's enhanced security features enabled
+- Create Management Group
+- The user must have owner or policy contributor permissions
+- Create a Managed Identity for Remediation
+
+## Add a Standard 
+
+1. From Defender for Cloud's menu, select **Regulatory compliance** to open the regulatory compliance dashboard. Here you can see the compliance standards currently assigned to the currently selected subscriptions.
+2. From the top of the page, select **Manage compliance policies.** The Policy Management page appears.
+3. Select the subscription or management group for which you want to manage the regulatory compliance posture.
+4. To add the standards relevant to your organization, expand the **Industry & regulatory standards** section and select **Add more standards.**
+5. From the **Add regulatory compliance standards** page, you can search for any of the available standards:
+![Add regulatory compliance standards](images/addrmit.jpg)
+
+6. Select **Add** and enter all the necessary details for the specific initiative such as scope, parameters, and remediation.
+7. From Defender for Cloud's menu, select Regulatory compliance again to go back to the regulatory compliance dashboard.
+
+  Your new standard appears in your list of Industry & regulatory standards.
+
+  > NOTE : It may take a few hours for a newly added standard to appear in the compliance dashboard. 
+  ![Add regulatory compliance standards](images/RMiTDefender.jpg)
+## Remove a standard from your dashboard
+You can continue to customize the regulatory compliance dashboard, to focus only on the standards that are applicable to you, by removing any of the supplied regulatory standards that aren't relevant to your organization.
+
+To remove a standard:
+
+1. From Defender for Cloud's menu, select Security policy.
+2. Select the relevant subscription from which you want to remove a standard.
+3. The security policy page opens. For the selected subscription, it shows the default policy, the industry and regulatory standards, and any custom initiatives you've created.
+4. For the standard you want to remove, select Disable / Delete. A confirmation window appears.
+  ![Remove regulatory compliance standards](images/deleteRMit.jpg)
+
+5. Select Yes. The standard will be removed.
+
+# 10. Add Bank custom controls as a Azure policies 
+This page describes how to deploy Enterprise-scale with a basic configuration based mainly on module defaults. We then show how to dynamically modify the built-in archetype definitions using the archetype extensions and archetype exclusions.
+
+[Expand built in archetype definitions](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BExamples%5D-Expand-Built-in-Archetype-Definitions)
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+This project welcomes contributions and suggestions. https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Contributing
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## Trademarks
-
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
