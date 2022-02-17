@@ -40,8 +40,8 @@ Detailed information about how to use, configure and extend this module can be f
 [Troubleshooting](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Troubleshooting)
 [Contributing](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Contributing)
 
-## Deployment Steps
-## 1. Clone the repo and go to terraform directory where the configuration codes reside.
+## 1. Deployment Steps
+### Clone the repo and go to terraform directory where the configuration codes reside.
 ```
 git clone git@github.com:Azure/regulatory-compliance-initiatives.git
 cd regulatory-compliance-initiatives/terraform/
