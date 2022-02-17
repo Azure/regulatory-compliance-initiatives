@@ -37,21 +37,21 @@ variable "management_resources_tags" {
   }
 }
 
-# # Connetivity Resouces Use variables to customize the deployment
-# variable "connectivity_resources_location" {
-#   type    = string
-#   default = "southeastasia"
-# }
-# variable "connectivity_resources_tags" {
-#   type = map(string)
-#   default = {
-#     demo_type = "deploy_connectivity_resources_custom"
-#   }
-# }
-# variable "deploy_connectivity_resources" {
-#   type    = bool
-#   default = true
-# }
+# Connetivity Resouces Use variables to customize the deployment
+variable "connectivity_resources_location" {
+  type    = string
+  default = "southeastasia"
+}
+variable "connectivity_resources_tags" {
+  type = map(string)
+  default = {
+    demo_type = "deploy_connectivity_resources_custom"
+  }
+}
+variable "deploy_connectivity_resources" {
+  type    = bool
+  default = true
+}
 
 # variable "library_path" {
 #   type        = string
