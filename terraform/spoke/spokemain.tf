@@ -1,7 +1,7 @@
 locals {
-  connectivity_hub_vnet_id = data.terraform_remote_state.eslz.outputs.resource_ids.enterprise_scale.azurerm_virtual_network.connectivity[0]
-  connectivity_hub_vnet_name = split("/", data.terraform_remote_state.eslz.outputs.resource_ids.enterprise_scale.azurerm_virtual_network.connectivity[0])[8]
-  connectivity_hub_vnet_rg_name = split("/", data.terraform_remote_state.eslz.outputs.resource_ids.enterprise_scale.azurerm_virtual_network.connectivity[0])[4]
+  connectivity_hub_vnet_id           = data.terraform_remote_state.eslz.outputs.resource_ids.enterprise_scale.azurerm_virtual_network.connectivity[0]
+  connectivity_hub_vnet_name         = split("/", data.terraform_remote_state.eslz.outputs.resource_ids.enterprise_scale.azurerm_virtual_network.connectivity[0])[8]
+  connectivity_hub_vnet_rg_name      = split("/", data.terraform_remote_state.eslz.outputs.resource_ids.enterprise_scale.azurerm_virtual_network.connectivity[0])[4]
   connectivity_azfirewall_private_ip = data.azurerm_firewall.connectivity.ip_configuration[0].private_ip_address
 }
 # RG 

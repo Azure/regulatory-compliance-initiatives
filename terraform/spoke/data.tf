@@ -4,11 +4,10 @@ data "terraform_remote_state" "eslz" {
   config = {
     path = "../landingzone/terraform.tfstate"
   }
-  
 }
 
 data "azurerm_firewall" "connectivity" {
-  name = split("/", data.terraform_remote_state.eslz.outputs.resource_ids.enterprise_scale.azurerm_firewall.connectivity[0])[8]
+  name                = split("/", data.terraform_remote_state.eslz.outputs.resource_ids.enterprise_scale.azurerm_firewall.connectivity[0])[8]
   resource_group_name = split("/", data.terraform_remote_state.eslz.outputs.resource_ids.enterprise_scale.azurerm_firewall.connectivity[0])[4]
 }
 
