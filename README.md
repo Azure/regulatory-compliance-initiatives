@@ -1,27 +1,65 @@
 # Malaysia’s Risk Management in Technology (RMiT) Regulatory Compliance as code and Azure Landing Zone in Terraform.
 # Background
 
+The Bank Negara of Malaysia is the Central Bank of Malaysia. It provides monetary policy for the country and regulates the financial sector within Malaysia. The Risk Management in Technology (RMiT) policy was created to ensure Malaysian financial institutions properly manage their cyber-risk exposure by establishing the necessary risk frameworks, governance structures, policies, and procedures.
+
 The purpose of the reference implementation is to guide [Bank Negara of Malaysia’s Risk Management in Technology (RMiT) Regulatory Compliance](https://www.bnm.gov.my/documents/20124/963937/Risk+Management+in+Technology+%28RMiT%29.pdf/810b088e-6f4f-aa35-b603-1208ace33619?t=1592866162078). This guide helps to ensure that the Microsoft Malaysian financial institutions customers on building Landing Zones in their Azure environment. The reference implementation is based on [Cloud Adoption Framework for Azure](https://docs.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/) and provides an opinionated implementation that enables to ensure that technology risk management framework (TRMF) 9.2 (e), (f), (g) and cyber resilience framework (CRF) 11.3 (d), (e), (g) remain relevant on an ongoing basis and meet the regulatory compliance by using [NIST SP 800-53 Rev. 4](https://docs.microsoft.com/azure/governance/policy/samples/nist-sp-800-53-r4) and [Risk Management in Technology (RMiT) policies.](https://docs.microsoft.com/en-us/azure/governance/policy/samples/rmit-malaysia)
+
+# Business Challenges
+
+The financial institutions need to establish end to end process of identification, assessment, mitigation, and monitoring. Across RMiT  domains. 
+
+- Financial institutions need to ensure the TRM framework to be an essential part security infrastructure. 
+- Define roles & responsibilities, risk assessment, risk classification, controls, risk mitigations, and monitoring.
+- Enforce compliance with corresponding regulatory policies
+- The published RMiT policy required financial institutions to cover the following six domains:
+- Four technical domains of namely
+- Technology Risk Management
+- - Technology Operations Management
+- - Cybersecurity Management
+- - Technology Audit
+- Two non-technical domains
+- - Governance
+- - Internal Awareness & Training
+
+# What is RMiT Compliance as code (CaC)
+
+The RMiT Compliance as code focuses on four technical domains and provide Azure Policies. 
+
+- Azure Policy helps to establish clear governance policies for a technology project, along with continuous monitoring and compliance over time report.
+- CaC helps organizations conceptualize the design and maintenance of security infrastructure in compliance with their business goal
+- Ensure cryptographic controls, key generation policies and certificate are monitored and audited/enforce at platform level.
+- Helps to audit information access control which includes identification, authentication, authorization, access denial, password policy, multifactor authentication, and monitoring the user activity by integrating Activity and Azure AD logs.
+- Audit the patch for vulnerabilities for Cloud resources
+- Landing zone helps establish network design, which includes network service management, network monitoring, virtual network design, log maintenance, network segmentation, and network security.
+
+# Benefits
+- RMiT related cybersecurity practices also act as a baseline for cyber insurance and legal and regulatory compliances.
+- Financial institutes will accelerate the opportunity and stay ahead of their competitors. 
+- Incorporating RMiT will encourage financial institutions to acquire third party assistance, hence, transferring the risk burden from the institution to vendor. 
+
+## Compliance as code (CaC) Goals 
+- Establishing the necessary risk frameworks, governance structures, policies, procedures to meet RMiT regulatory requirements 
+- Accelerate the use of Azure in financial services through onboarding multiple types of workloads including, Azure IaaS, Lift & Shift, App Dev and Data & AI.
+- Enforcing sets of RMiT controls and ensuring these are followed at scale is critical to a thriving digital business. 
+- Simplify compliance management through a single source of compliance, audit reporting and auto remediation.
+- By adopting an engineering mindset, through code you can make compliance automatic, releasing your company to focus on higher value activities.
+- Deployment of DevOps frameworks & business processes to improve agility.
+## Compliance as code (CaC) Non-Goals
+
+- Automatic approval / notification for Risk Management in Technology. Customers must collect evidence, customize to meet their regulatory requirements and submit for Authority to Operate based on their risk profile, requirements and process. Refer [Appendix 7 Risk Assessment Report](https://www.bnm.gov.my/documents/20124/963937/Risk+Management+in+Technology+%28RMiT%29.pdf/810b088e-6f4f-aa35-b603-1208ace33619?t=1592866162078)
+- Compliant on all Azure Policies when the reference implementation is deployed. This is due to the shared responsibility of cloud and customers can choose the Azure Policies to exclude. For example, using Azure Firewall is an Azure Policy that will be non-compliant since majority of the financial institutions customers use Network Virtual Appliances such as Palo Alto, Check Point, Fortinet. Customers must review [Microsoft Defender for Cloud Regulatory Compliance dashboard](https://docs.microsoft.com/en-gb/azure/defender-for-cloud/update-regulatory-compliance-packages) and apply appropriate exemptions.
+- Automation does not configure firewalls deployed as Network Virtual Appliance (NVA). In this reference implementation, Fortinet firewalls can be deployed but customer is expected to configure and manage upon deployment.
 # Onboarding to RMiT Compliance as code using Azure Landing Zone 
 
 The [Terraform Module for Cloud Adoption Framework Enterprise-scale](https://registry.terraform.io/modules/Azure/caf-enterprise-scale/azurerm/latest) provides an opinionated approach for deploying and managing the core platform capabilities of [Cloud Adoption Framework enterprise-scale landing zone architecture](https://docs.microsoft.com/en-gb/azure/cloud-adoption-framework/ready/landing-zone/) using Terraform.
 
 The following examples are designed to help build an understanding of how to use the module, ranging from basic deployments covering the core resource hierarchy from Enterprise-scale, through to more advanced scenarios.
 
-Setp by setp guide refer [Terraform Module for Cloud Adoption Framework Enterprise-scale repo.](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Examples) 
+Step by step guide refer [Terraform Module for Cloud Adoption Framework Enterprise-scale repo.](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Examples) 
 
 In this post we will focus on onbording RMiT Compliance as code using Azure Landing Zone terraform. 
-## Goals 
-- Establishing the necessary risk frameworks, governance structures, policies, procedures to meet RMiT policies
-- Accelerate the use of Azure in financial services through onboarding multiple types of workloads including, Azure IaaS, Lift & Shift, App Dev and Data & AI.
-- Enforcing sets of RMiT controls and ensuring these are followed at scale is critical to a thriving digital business. 
-- Simplify compliance management through a single source of compliance, audit reporting and auto remediation.
-- By adopting an engineering mindset, through code you can make compliance automatic, releasing your company to focus on higher value activities.
-- Deployment of DevOps frameworks & business processes to improve agility.
-## Non-Goals
-- Automation does not configure firewalls deployed as Network Virtual Appliance (NVA). In this reference implementation, Fortinet firewalls can be deployed but customer is expected to configure and manage upon deployment.
-- Automatic approval / notification for Risk Management in Technology. Customers must collect evidence, customize to meet their regulatory requirements and submit for Authority to Operate based on their risk profile, requirements and process. Refer [Appendix 7 Risk Assessment Report](https://www.bnm.gov.my/documents/20124/963937/Risk+Management+in+Technology+%28RMiT%29.pdf/810b088e-6f4f-aa35-b603-1208ace33619?t=1592866162078)
-- Compliant on all Azure Policies when the reference implementation is deployed. This is due to the shared responsibility of cloud and customers can choose the Azure Policies to exclude. For example, using Azure Firewall is an Azure Policy that will be non-compliant since majority of the financial institutions customers use Network Virtual Appliances such as Palo Alto, Check Point, Fortinet. Customers must review [Microsoft Defender for Cloud Regulatory Compliance dashboard](https://docs.microsoft.com/en-gb/azure/defender-for-cloud/update-regulatory-compliance-packages) and apply appropriate exemptions.
+
 # How to Deploy Azure Landing Zones via Terraform 
 To add it as a custom initiative:
 New-AzPolicySetDefinition -Name "RMIT Test" -GroupDefinition .\groups.json -PolicyDefinition .\policies.json -Parameter .\params.json
@@ -390,6 +428,7 @@ Step by step guide to [Multi-Subscription deployment](https://github.com/Azure/t
 # 9. Enable  RMiT Malaysia regulatory compliance dashboard in Microsoft Defender for Cloud
 
 Microsoft Defender for Cloud continually compares the configuration of your resources with requirements in industry standards, regulations, and benchmarks. The regulatory compliance dashboard provides insights into your compliance posture based on how you're meeting specific compliance requirements.
+
 ## Prerequisites
 To add standards to your dashboard:
 
