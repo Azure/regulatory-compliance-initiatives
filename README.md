@@ -41,6 +41,8 @@ The financial institutions need to establish end to end process of identificatio
 
 # What is RMiT Compliance as code (CaC)
 
+Compliance-as-Code mean programmatic methods for automating the policy implementation, validation, remediation, monitoring, and reporting of the required regulatory compliance standards that an organization needs to be compliant. 
+
 The RMiT Compliance as code focuses on four technical domains and provide Azure Policies. 
 
 - Azure Policy helps to establish clear governance policies for a technology project, along with continuous monitoring and compliance over time report.
