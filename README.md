@@ -18,18 +18,18 @@
 - [Add Bank custom controls as a Azure policies](#add-bank-custom-controls-as-a-azure-policies)
 # Background
 
-The Bank Negara of Malaysia is the Central Bank of Malaysia. It provides monetary policy for the country and regulates the financial sector within Malaysia. The Risk Management in Technology (RMiT) policy was created to ensure Malaysian financial institutions properly manage their cyber-risk exposure by establishing the necessary risk frameworks, governance structures, policies, and procedures.
+Bank Negara Malaysia (BNM) is the Central Bank of Malaysia. It provides monetary policy for the country and regulates the financial sector within Malaysia. The Risk Management in Technology (RMiT) policy was created to ensure Malaysian financial institutions properly manage their cyber-risk exposure by establishing the necessary risk frameworks, governance structures, policies, and procedures.
 
 The purpose of the reference implementation is to guide [Bank Negara of Malaysia’s Risk Management in Technology (RMiT) Regulatory Compliance](https://www.bnm.gov.my/documents/20124/963937/Risk+Management+in+Technology+%28RMiT%29.pdf/810b088e-6f4f-aa35-b603-1208ace33619?t=1592866162078). This guide helps to ensure that the Microsoft Malaysian financial institutions customers on building Landing Zones in their Azure environment. The reference implementation is based on [Cloud Adoption Framework for Azure](https://docs.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/) and provides an opinionated implementation that enables to ensure that technology risk management framework (TRMF) 9.2 (e), (f), (g) and cyber resilience framework (CRF) 11.3 (d), (e), (g) remain relevant on an ongoing basis and meet the regulatory compliance by using [NIST SP 800-53 Rev. 4](https://docs.microsoft.com/azure/governance/policy/samples/nist-sp-800-53-r4) and [Risk Management in Technology (RMiT) policies.](https://docs.microsoft.com/en-us/azure/governance/policy/samples/rmit-malaysia)
 
 # Business Challenges
 
-The financial institutions need to establish end to end process of identification, assessment, mitigation, and monitoring. Across RMiT  domains. 
+The financial institutions need to establish end to end process of identification, assessment, mitigation, monitoring, and reporting across the RMiT domains. 
 
-- Financial institutions need to ensure the TRM and CRF framework to be an essential part security infrastructure. 
-- Define roles & responsibilities, risk assessment, risk classification, controls, risk mitigations, and monitoring.
+- Financial institutions need to ensure the Technology Risk Manager (TRM) framework is an essential part of their security infrastructure. 
+- Define roles & responsibilities, risk assessment, risk classification, controls, risk mitigation, and monitoring.
 - Enforce compliance with corresponding regulatory policies
-- The published RMiT policy required financial institutions to cover the following six domains:
+- The published RMiT policy requires financial institutions to cover the following six domains:
 - Four technical domains of namely
 - - Technology Risk Management
 - - Technology Operations Management
@@ -41,24 +41,24 @@ The financial institutions need to establish end to end process of identificatio
 
 # What is RMiT Compliance as code (CaC)
 
-Compliance-as-Code mean programmatic methods for automating the policy implementation, validation, remediation, monitoring, and reporting of the required regulatory compliance standards that an organization needs to be compliant. 
+Compliance-as-Code is a programmatic approach for automating the implementation, validation, remediation, monitoring, and reporting of the required regulatory compliance standards for the respective organizations. 
 
-The RMiT Compliance as code focuses on four technical domains and provide Azure Policies. 
+The RMiT Compliance as code focuses on the four technical domains and provides the appropriate Azure Policies. 
 
 - Azure Policy helps to establish clear governance policies for a technology project, along with continuous monitoring and compliance over time report.
-- CaC helps organizations conceptualize the design and maintenance of security infrastructure in compliance with their business goal
+- CaC helps organizations conceptualize the design and maintenance of security infrastructure in compliance with their business goal.
 - Ensure cryptographic controls, key generation policies and certificate are monitored and audited/enforce at platform level.
 - Helps to audit information access control which includes identification, authentication, authorization, access denial, password policy, multifactor authentication, and monitoring the user activity by integrating Activity and Azure AD logs.
 - Audit the patch for vulnerabilities for Cloud resources
 - Landing zone helps establish network design, which includes network service management, network monitoring, virtual network design, log maintenance, network segmentation, and network security.
 
 # Benefits
-- RMiT related cybersecurity practices also act as a baseline for cyber insurance and legal and regulatory compliances.
-- Financial institutes will accelerate the opportunity and stay ahead of their competitors.
-- Defender for Cloud provides the tools helps to harden your resources, track your security posture, protect against cyber attacks, and streamline security management. Because it's natively integrated, deployment of Defender for Cloud is easy, providing you with simple auto provisioning to secure your resources by default.
-- Ensuring the cloud resources are remain audit competencies, allow security team to set exempt a specific resource or environment and mark resource with specific justification to track.
-- Prevent misconfigurations with Enforce/Deny recommendations
-- Incorporating RMiT will encourage financial institutions to acquire third party assistance, hence, transferring the risk burden from the institution to vendor.
+- RMiT related cybersecurity practices also act as a baseline for cyber insurance, as well as legal and regulatory compliance.
+- Financial institutes can accelerate their digital transformation to serve their customers better, drive innovation and competitive differentiation.
+- Microsoft Defender for Cloud provides organizations with the tools needed to harden resources, track security posture, protect against cyber attacks, and streamline security management. Because it's natively integrated, deployment of Microsoft Defender for Cloud is easy, providing a simple auto provisioning to secure the resources by default.
+- Ensure the cloud resources remain audit compliance competencies  , allow security teams to exempt any specific resource or environment by marking such resource/environment with specific justification to track.
+- Prevent misconfigurations with Enforce/Deny recommendations.
+- Incorporating RMiT will encourage financial institutions to acquire third party assistance, hence transferring the risk burden from the institution to the respective vendor(s).
 
 # Compliance as code (CaC) Goals 
 - Establishing the necessary risk frameworks, governance structures, policies, procedures to meet RMiT regulatory requirements 
@@ -450,7 +450,7 @@ Step by step guide to [Multi-Subscription deployment](https://github.com/Azure/t
 
 # Enable  RMiT Malaysia regulatory compliance dashboard in Microsoft Defender for Cloud
 
-Microsoft Defender for Cloud continually compares the configuration of your resources with requirements in industry standards, regulations, and benchmarks. The regulatory compliance dashboard provides insights into your compliance posture based on how you're meeting specific compliance requirements.
+Microsoft Defender for Cloud continually compares the configuration of the organization’s resources with requirements in industry standards, regulations, and benchmarks. The regulatory compliance dashboard provides insights into the organization’s compliance posture based on how they are meeting specific compliance requirements.
 
 ## Prerequisites
 To add standards to your dashboard:
