@@ -1,4 +1,21 @@
 # Malaysia’s Risk Management in Technology (RMiT) Regulatory Compliance as code and Azure Landing Zone in Terraform.
+
+
+- [Background](#background)
+- [Business Challenges](#business-challenges)
+- [What is RMiT Compliance as code (CaC)](#what-is-rmit-compliance-as-code-cac)
+- [Benefits](#benefits)
+- [Compliance as code (CaC) Goals](#compliance-as-code-cac-goals)
+- [Compliance as code (CaC) Non-Goals](#compliance-as-code-cac-non-goals)
+- [Onboarding to RMiT Compliance as code using Azure Landing Zone](#onboarding-to-rmit-compliance-as-code-using-azure-landing-zone)
+- [How to Deploy Azure Landing Zones via Terraform](#how-to-deploy-azure-landing-zones-via-terraform)
+- [How to modify management group](#how-to-modify-management-group)
+- [Deploy Landing Zone Archetypes](#hub-spoke-network-topology-in-azure)
+- [Hub-spoke network topology in Azure](#hub-spoke-network-topology-in-azure)
+- [Single Subscription deployment](#single-subscription-deployment)
+- [Multi-Subscription deployment](#multi-subscription-deployment)
+- [Enable RMiT Malaysia regulatory compliance dashboard in Microsoft Defender for Cloud](#enable--rmit-malaysia-regulatory-compliance-dashboard-in-microsoft-defender-for-cloud)
+- [Add Bank custom controls as a Azure policies](#add-bank-custom-controls-as-a-azure-policies)
 # Background
 
 The Bank Negara of Malaysia is the Central Bank of Malaysia. It provides monetary policy for the country and regulates the financial sector within Malaysia. The Risk Management in Technology (RMiT) policy was created to ensure Malaysian financial institutions properly manage their cyber-risk exposure by establishing the necessary risk frameworks, governance structures, policies, and procedures.
@@ -9,12 +26,12 @@ The purpose of the reference implementation is to guide [Bank Negara of Malaysia
 
 The financial institutions need to establish end to end process of identification, assessment, mitigation, and monitoring. Across RMiT  domains. 
 
-- Financial institutions need to ensure the TRM framework to be an essential part security infrastructure. 
+- Financial institutions need to ensure the TRM and CRF framework to be an essential part security infrastructure. 
 - Define roles & responsibilities, risk assessment, risk classification, controls, risk mitigations, and monitoring.
 - Enforce compliance with corresponding regulatory policies
 - The published RMiT policy required financial institutions to cover the following six domains:
 - Four technical domains of namely
-- Technology Risk Management
+- - Technology Risk Management
 - - Technology Operations Management
 - - Cybersecurity Management
 - - Technology Audit
@@ -35,19 +52,23 @@ The RMiT Compliance as code focuses on four technical domains and provide Azure 
 
 # Benefits
 - RMiT related cybersecurity practices also act as a baseline for cyber insurance and legal and regulatory compliances.
-- Financial institutes will accelerate the opportunity and stay ahead of their competitors. 
-- Incorporating RMiT will encourage financial institutions to acquire third party assistance, hence, transferring the risk burden from the institution to vendor. 
+- Financial institutes will accelerate the opportunity and stay ahead of their competitors.
+- Defender for Cloud provides the tools helps to harden your resources, track your security posture, protect against cyber attacks, and streamline security management. Because it's natively integrated, deployment of Defender for Cloud is easy, providing you with simple auto provisioning to secure your resources by default.
+- Ensuring the cloud resources are remain audit competencies, allow security team to set exempt a specific resource or environment and mark resource with specific justification to track.
+- Prevent misconfigurations with Enforce/Deny recommendations
+- Incorporating RMiT will encourage financial institutions to acquire third party assistance, hence, transferring the risk burden from the institution to vendor.
 
-## Compliance as code (CaC) Goals 
+# Compliance as code (CaC) Goals 
 - Establishing the necessary risk frameworks, governance structures, policies, procedures to meet RMiT regulatory requirements 
 - Accelerate the use of Azure in financial services through onboarding multiple types of workloads including, Azure IaaS, Lift & Shift, App Dev and Data & AI.
 - Enforcing sets of RMiT controls and ensuring these are followed at scale is critical to a thriving digital business. 
 - Simplify compliance management through a single source of compliance, audit reporting and auto remediation.
 - By adopting an engineering mindset, through code you can make compliance automatic, releasing your company to focus on higher value activities.
 - Deployment of DevOps frameworks & business processes to improve agility.
-## Compliance as code (CaC) Non-Goals
+# Compliance as code (CaC) Non-Goals
 
 - Automatic approval / notification for Risk Management in Technology. Customers must collect evidence, customize to meet their regulatory requirements and submit for Authority to Operate based on their risk profile, requirements and process. Refer [Appendix 7 Risk Assessment Report](https://www.bnm.gov.my/documents/20124/963937/Risk+Management+in+Technology+%28RMiT%29.pdf/810b088e-6f4f-aa35-b603-1208ace33619?t=1592866162078)
+- [Navigating a Path to the Cloud: Malaysia](https://aka.ms/navigatecloudmalaysia)
 - Compliant on all Azure Policies when the reference implementation is deployed. This is due to the shared responsibility of cloud and customers can choose the Azure Policies to exclude. For example, using Azure Firewall is an Azure Policy that will be non-compliant since majority of the financial institutions customers use Network Virtual Appliances such as Palo Alto, Check Point, Fortinet. Customers must review [Microsoft Defender for Cloud Regulatory Compliance dashboard](https://docs.microsoft.com/en-gb/azure/defender-for-cloud/update-regulatory-compliance-packages) and apply appropriate exemptions.
 - Automation does not configure firewalls deployed as Network Virtual Appliance (NVA). In this reference implementation, Fortinet firewalls can be deployed but customer is expected to configure and manage upon deployment.
 # Onboarding to RMiT Compliance as code using Azure Landing Zone 
@@ -78,13 +99,13 @@ Detailed information about how to use, configure and extend this module can be f
 [Troubleshooting](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Troubleshooting)
 [Contributing](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/Contributing)
 
-## 1. Deployment Steps
+## Deployment Steps
 ### Clone the repo and go to terraform directory where the configuration codes reside.
 ```
 git clone git@github.com:Azure/regulatory-compliance-initiatives.git
 cd regulatory-compliance-initiatives/terraform/
 ```
-## 2. Login to your identity
+## Login to your identity
 You may follow the guide in this documentation for further reference
 https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/azure_cli
 
@@ -119,7 +140,7 @@ Here you should make sure you are signed into the correct subscription, otherwis
 az account list
 az account set --subscription="SUB_ID_HERE"
 ```
-## 3. Run Terraform
+## Run Terraform
 Once you have logged in, make sure you are in the right directory shown in step 1, and run the following commands.
 
 ```terraform
@@ -132,7 +153,7 @@ terraform apply -auto-approve -parallelism=50
 ```
 This process may take up to 30 minutes. Once the run is complete, you may review the changes in the portal under "Management Groups" and "Azure Policy"
 
-# 4. How to modify management group
+# How to modify management group
 
 Management Groups enable organizations to efficiently manage access, governance and compliance across all subscriptions. Azure management groups provide a level of scope above subscriptions. Subscriptions are organized into containers called "management groups" and apply Azure Policies and role-based access control to the management groups. All subscriptions within a management group automatically inherit the settings applied to the management group.
 
@@ -158,7 +179,7 @@ variable "root_id" {
 
 ```
 To change root group name visit [Changing Root Parent ID](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/issues/190)  
-# 5. Deploy Landing Zone Archetypes 
+# Deploy Landing Zone Archetypes 
 
 To deploy Enterprise-scale with a starter configuration based mainly on module defaults, including the additional Management Groups used for demonstrating the Enterprise-scale Landing Zone archetypes:
 
@@ -168,7 +189,7 @@ To deploy Enterprise-scale with a starter configuration based mainly on module d
 
 Visit [Examples] [Deploy Demo Landing Zone Archetypes](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BExamples%5D-Deploy-Demo-Landing-Zone-Archetypes)
 
-modify main.tf following parameter value set the vaule "true"
+modify main.tf following parameter value set the value "true"
 ```terraform
   # Configuration settings for optional landing zones
   deploy_corp_landing_zones   = true
@@ -182,18 +203,30 @@ modify main.tf following parameter value set the vaule "true"
 As we stated above this structure can be customized based on your organization's requirements. Specifically:
 
 for example the below Landing Zones will be split by 3 groups of environments 
-- Production
-- Pre-Production
-- Non-Production
+- Prod
+- Test
+- Dev
 
-You can change this vaule to anything DEV, TEST, PROD or something like [What about our management group hierarchy?](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/faq) the detail guide how to modify the main object parameters [refe to our custom landing zone](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BVariables%5D-custom_landing_zones)
+You can change this value to anything DEV, TEST, PROD or something like [What about our management group hierarchy?](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/faq) the detail guide how to modify the main object parameters [refe to our custom landing zone](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BVariables%5D-custom_landing_zones)
+
+[How do we handle "dev/test/production" workload landing zones in enterprise-scale architecture?](https://docs.microsoft.com/en-us/azure/cloud-adoption-framework/ready/enterprise-scale/faq#how-do-we-handle-devtestproduction-workload-landing-zones-in-enterprise-scale-architecture)
 
 ```terraform
 #custom landing zone deployment
-custom_landing_zones = {
-    "${var.root_id}-production" = {
-      display_name               = "Production"
-      parent_management_group_id = "${var.root_id}-landing-zones"
+   custom_landing_zones = {
+    "${var.root_id}-corp-prod" = {
+      display_name               = "Prod"
+      parent_management_group_id = "${var.root_id}-corp"
+      subscription_ids           = ["Your Subscription ID"]
+      archetype_config = {
+        archetype_id   = "default_empty"
+        parameters     = {}
+        access_control = {}
+      }
+    }
+    "${var.root_id}-corp-test" = {
+      display_name               = "Test"
+      parent_management_group_id = "${var.root_id}-corp"
       subscription_ids           = []
       archetype_config = {
         archetype_id   = "default_empty"
@@ -201,30 +234,18 @@ custom_landing_zones = {
         access_control = {}
       }
     }
-    "${var.root_id}-pre-production" = {
-      display_name               = "Pre-Production"
-      parent_management_group_id = "${var.root_id}-landing-zones"
+    "${var.root_id}-corp-dev" = {
+      display_name               = "Dev"
+      parent_management_group_id = "${var.root_id}-corp"
       subscription_ids           = []
       archetype_config = {
         archetype_id   = "default_empty"
         parameters     = {}
         access_control = {}
       }
-    }
-    "${var.root_id}-non-production" = {
-      display_name               = "Non-Production"
-      parent_management_group_id = "${var.root_id}-landing-zones"
-      subscription_ids           = []
-      archetype_config = {
-        archetype_id   = "default_empty"
-        parameters     = {}
-        access_control = {}
-      }
-    }
-  }
 ```
-  ![Custom Landing Zone](images/landingzonesample.jpg)
-# 6. Hub-spoke network topology in Azure
+  ![Custom Landing Zone](images/managment-group.jpg)
+# Hub-spoke network topology in Azure
 The hub virtual network acts as a central point of connectivity to many spoke virtual networks. The hub can also be used as the connectivity point to your on-premises networks. The spoke virtual networks peer with the hub and can be used to isolate workloads.
 
 Hub and spoke is a networking model for efficiently managing common communication or security requirements. It also helps avoid Azure subscription limitations. This model addresses the following concerns:
@@ -237,7 +258,7 @@ Hub and spoke is a networking model for efficiently managing common communicatio
 
 To [Deploy Connectivity Resources With Custom Settings](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BExamples%5D-Deploy-Connectivity-Resources-With-Custom-Settings)
 
-# 7. Single Subscription deployment
+# Single Subscription deployment
 You can deploy the Hub and spoke in Single Subscription for testng or development. A single hub-and-spoke implementation can scale up to a large number of spokes, but as with every IT system, there are platform limits. The hub deployment is bound to a specific Azure subscription, which has restrictions and limits. One example is a maximum number of virtual network peerings. For more information, see [Azure subscription and service limits.](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits)
 
 Step by step guide to [Single Subscription deployment](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Provider-Configuration#single-subscription-deployment)
@@ -414,7 +435,7 @@ variable "deploy_connectivity_resources" {
 }
 
 ```
-# 8. Multi-Subscription deployment
+# Multi-Subscription deployment
 You can deploy the Hub and spoke in Multi-Subscription this will provide The isolation of Azure components in different Azure subscriptions can satisfy the requirements of different lines of business, such as setting up differentiated levels of access and authorization.
 
 The multiple subscription & hubs increases the cost and management overhead of the system. This increase is only justified by:
@@ -425,7 +446,7 @@ The multiple subscription & hubs increases the cost and management overhead of t
 
 Step by step guide to [Multi-Subscription deployment](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Provider-Configuration#multi-subscription-deployment)
 
-# 9. Enable  RMiT Malaysia regulatory compliance dashboard in Microsoft Defender for Cloud
+# Enable  RMiT Malaysia regulatory compliance dashboard in Microsoft Defender for Cloud
 
 Microsoft Defender for Cloud continually compares the configuration of your resources with requirements in industry standards, regulations, and benchmarks. The regulatory compliance dashboard provides insights into your compliance posture based on how you're meeting specific compliance requirements.
 
@@ -466,7 +487,7 @@ To remove a standard:
 
 5. Select Yes. The standard will be removed.
 
-# 10. Add Bank custom controls as a Azure policies 
+# Add Bank custom controls as a Azure policies 
 This page describes how to deploy Enterprise-scale with a basic configuration based mainly on module defaults. We then show how to dynamically modify the built-in archetype definitions using the archetype extensions and archetype exclusions.
 
 [Expand built in archetype definitions](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BExamples%5D-Expand-Built-in-Archetype-Definitions)
