@@ -33,15 +33,15 @@ module "enterprise_scale" {
   configure_connectivity_resources = local.configure_connectivity_resources
 
   # Configuration settings for optional landing zones
-  deploy_corp_landing_zones   = false
-  deploy_online_landing_zones = false
-  deploy_sap_landing_zones    = false
+  deploy_corp_landing_zones   = true
+  deploy_online_landing_zones = true
+  deploy_sap_landing_zones    = true
   deploy_demo_landing_zones   = false
 
   custom_landing_zones = {
-    "${var.root_id}-production" = {
-      display_name               = "Production"
-      parent_management_group_id = "${var.root_id}-landing-zones"
+    "${var.root_id}-corp-prod" = {
+      display_name               = "Prod"
+      parent_management_group_id = "${var.root_id}-corp"
       subscription_ids           = ["de40a933-33fc-47a7-afaf-78f0c6edba9a"]
       archetype_config = {
         archetype_id   = "default_empty"
@@ -49,9 +49,9 @@ module "enterprise_scale" {
         access_control = {}
       }
     }
-    "${var.root_id}-pre-production" = {
-      display_name               = "Pre-Production"
-      parent_management_group_id = "${var.root_id}-landing-zones"
+    "${var.root_id}-corp-test" = {
+      display_name               = "Test"
+      parent_management_group_id = "${var.root_id}-corp"
       subscription_ids           = []
       archetype_config = {
         archetype_id   = "default_empty"
@@ -59,15 +59,16 @@ module "enterprise_scale" {
         access_control = {}
       }
     }
-    "${var.root_id}-non-production" = {
-      display_name               = "Non-Production"
-      parent_management_group_id = "${var.root_id}-landing-zones"
+    "${var.root_id}-corp-dev" = {
+      display_name               = "Dev"
+      parent_management_group_id = "${var.root_id}-corp"
       subscription_ids           = []
       archetype_config = {
         archetype_id   = "default_empty"
         parameters     = {}
         access_control = {}
       }
+   
       # archetype_config = {
       #   archetype_id   = "customer_online"
       #   parameters     = {
