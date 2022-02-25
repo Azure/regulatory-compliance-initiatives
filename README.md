@@ -1,10 +1,10 @@
 # Malaysia’s Risk Management in Technology (RMiT) Regulatory Compliance as code and Azure Landing Zone in Terraform.
 
 
-- [Background](regulatory-compliance-initiatives#background)
-- [Business Challenges](regulatory-compliance-initiatives#business-challenges)
-- [What is RMiT Compliance as code (CaC)](regulatory-compliance-initiatives#what-is-rmit-compliance-as-code-cac)
-- [Benefits](regulatory-compliance-initiatives#benefits)
+- [Background](../regulatory-compliance-initiatives#background)
+- [Business Challenges](../regulatory-compliance-initiatives#business-challenges)
+- [What is RMiT Compliance as code (CaC)](../regulatory-compliance-initiatives#what-is-rmit-compliance-as-code-cac)
+- [Benefits](../regulatory-compliance-initiatives#benefits)
 - [Compliance as code (CaC) Goals](regulatory-compliance-initiatives#compliance-as-code-cac-goals)
 - [Compliance as code (CaC) Non-Goals](regulatory-compliance-initiatives#compliance-as-code-cac-non-goals)
 - [Onboarding to RMiT Compliance as code using Azure Landing Zone]()
@@ -217,7 +217,7 @@ You can change this value to anything DEV, TEST, PROD or something like [What ab
     "${var.root_id}-corp-prod" = {
       display_name               = "Prod"
       parent_management_group_id = "${var.root_id}-corp"
-      subscription_ids           = ["de40a933-33fc-47a7-afaf-78f0c6edba9a"]
+      subscription_ids           = ["Your Subscription ID"]
       archetype_config = {
         archetype_id   = "default_empty"
         parameters     = {}
