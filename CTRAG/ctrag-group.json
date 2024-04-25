@@ -1,0 +1,32 @@
+[
+    {
+      "name": "10.21",
+      "category": "Data Centre Resilience",
+      "displayName": "Data Centre Infrastructure",
+      "description": "A financial institution must specify the resilience and availability objectives of \nits data centres which are aligned with its business needs. The network \ninfrastructure must be designed to be resilient, secure and scalable. Potential \ndata centre failures or disruptions must not significantly degrade the delivery \nof its financial services or impede its internal operations"
+    },
+    {
+      "name": "10.23",
+      "category": "Data Centre Resilience",
+      "displayName": "Data Centre Infrastructure",
+      "description": "In addition to the requirement in paragraph 10.22, large financial institutions \nare also required to ensure recovery data centres are concurrently \nmaintainable."
+    },
+    {
+      "name": "10.33",
+      "category": "Data Centre Resilience",
+      "displayName": "Network Resilience",
+      "description": "A financial institution must design a reliable, scalable and secure enterprise \nnetwork that is able to support its business activities, including future growth \nplans"
+    },
+    {
+      "name": "11.24",
+      "category": "Cyber Response and Recovery",
+      "displayName": "Cyber Response and Recovery",
+      "description": "A financial institution must ensure that relevant CERT members are conversant with the incident response plan and handling procedures and remain contactable at all times. A key contact person or an alternate must be appointed to liaise with the Bank during an incident."
+    },
+    {
+      "name": "11.17",
+      "category": "Security Operations Centre (SOC)",
+      "displayName": "Security Operations Centre (SOC)",
+      "description": "A financial institution must ensure its SOC, whether managed in-house or by third party service providers, has adequate capabilities for proactive monitoring of its technology security posture. This shall enable the financial institution to detect anomalous user or network activities, flag potential breaches and establish the appropriate response supported by skilled resources based on the level of complexity of the alerts. "
+    }
+]
